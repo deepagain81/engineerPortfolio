@@ -2,6 +2,18 @@ import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import ThemeToggle from '@/components/common/ThemeToggle'
 
+// mock matchMedia
+window.matchMedia = jest.fn().mockImplementation((q) => ({
+  matches: q.includes('prefers-color-scheme') ? true /* dark */ : false,
+  media: q,
+  onchange: null,
+  addListener: jest.fn(),
+  removeListener: jest.fn(),
+  addEventListener: jest.fn(),
+  removeEventListener: jest.fn(),
+  dispatchEvent: jest.fn(),
+}));
+
 // Provide a root element for class toggling
 beforeEach(() => {
   document.documentElement.className = ''

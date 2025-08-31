@@ -4,13 +4,12 @@ export const CONFIG = {
   meta: { siteTitle: 'Engineer Portfolio', theme: 'system' },
   profile: {
     name: 'Deepak Chapagain',
-    role: 'Software Engineer',
+    role: 'Front-end leader with mobile depth',
     location: 'Nashville, TN, USA',
     email: 'dchapagain.dev@gmail.com',
     website: 'https://example.dev',
     avatarUrl: '../assets/picofme.png',
-    summary:
-      'I build reliable, user-loving products with React, TypeScript, and cloud-native backends. I care about DX, performance, and elegant APIs.',
+    summary:`I am a front-end engineer with 5+ years building React and React Native experiences at enterprise scale. My sweet spot is simplifying complex flows—migrating data access to GraphQL, hardening auth, and trimming payloads for faster LCP/INP. I care about accessibility, performance, and measurable outcomes; I instrument what I ship and iterate with data. With an MBA plus a computer engineering degree, I bridge product intent and technical design, and I’m comfortable partnering across design, backend, and analytics. I’m targeting senior front-end roles in e-commerce or high-scale product teams.`,
     resumeUrl: '../assets/deepakChapagainResume.pdf',
     availability: 'Open to roles & consulting',
   },

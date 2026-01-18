@@ -9,7 +9,7 @@ export function Work() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight">Featured Work</h2>
-            <p className="mt-2 text-sm text-black/60">
+            <p className="mt-2 text-sm text-black/60 dark:text-white/60">
               A few outcomes-focused examples. We can expand these into full case studies later.
             </p>
           </div>

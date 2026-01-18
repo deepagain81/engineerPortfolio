@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* small sane defaults */
 :root {
   color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -13,4 +16,10 @@ html, body {
 
 body {
   margin: 0;
+}
+
+/* Improve text rendering a bit */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

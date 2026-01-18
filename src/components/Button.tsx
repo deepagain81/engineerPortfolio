@@ -18,10 +18,17 @@ const base =
   "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-black text-white hover:opacity-90 focus-visible:ring-black ring-offset-white",
-  secondary: "bg-white text-black border border-black/15 hover:bg-black/5 focus-visible:ring-black ring-offset-white",
-  ghost: "bg-transparent text-black hover:bg-black/5 focus-visible:ring-black ring-offset-white",
+  primary:
+    "bg-black text-white hover:opacity-90 focus-visible:ring-black ring-offset-white " +
+    "dark:bg-white dark:text-black dark:focus-visible:ring-white dark:ring-offset-black",
+  secondary:
+    "bg-white text-black border border-black/15 hover:bg-black/5 focus-visible:ring-black ring-offset-white " +
+    "dark:bg-white/5 dark:text-white dark:border-white/15 dark:hover:bg-white/10 dark:focus-visible:ring-white dark:ring-offset-black",
+  ghost:
+    "bg-transparent text-black hover:bg-black/5 focus-visible:ring-black ring-offset-white " +
+    "dark:text-white dark:hover:bg-white/10 dark:focus-visible:ring-white dark:ring-offset-black",
 };
+
 
 export function ButtonLink({ variant = "primary", className = "", ...props }: AnchorProps) {
   return <a className={`${base} ${variants[variant]} ${className}`} {...props} />;
@@ -30,4 +37,3 @@ export function ButtonLink({ variant = "primary", className = "", ...props }: An
 export function Button({ variant = "primary", className = "", ...props }: NativeButtonProps) {
   return <button className={`${base} ${variants[variant]} ${className}`} {...props} />;
 }
-`   `

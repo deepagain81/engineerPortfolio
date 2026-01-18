@@ -22,7 +22,7 @@ export function Contact() {
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight">Contact</h2>
-            <p className="mt-2 text-sm text-black/60">
+            <p className="mt-2 text-sm text-black/60 dark:text-white/60">
               Want to discuss a role, a contract, or a collaboration? Email is best.
             </p>
 
@@ -47,7 +47,7 @@ export function Contact() {
                 <input
                   name="name"
                   required
-                  className="mt-1 w-full rounded-xl border border-black/15 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black"
+                  className="mt-1 w-full rounded-xl border border-black/15 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black dark:border-white/15"
                 />
               </div>
 
@@ -57,7 +57,7 @@ export function Contact() {
                   name="message"
                   required
                   rows={5}
-                  className="mt-1 w-full rounded-xl border border-black/15 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black"
+                  className="mt-1 w-full rounded-xl border border-black/15 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-black dark:border-white/15"
                 />
               </div>
 
@@ -68,7 +68,7 @@ export function Contact() {
                 Send via email
               </button>
 
-              <p className="text-xs text-black/50">
+              <p className="text-xs text-black/50 dark:text-white/50">
                 This form opens your email client (no backend). We can add a real endpoint later if you want.
               </p>
             </form>

@@ -7,7 +7,7 @@ export function Skills() {
     <section id="skills" className="py-12">
       <Container>
         <h2 className="text-2xl font-semibold tracking-tight">Skills</h2>
-        <p className="mt-2 text-sm text-black/60">
+        <p className="mt-2 text-sm text-black/60 dark:text-white/60">
           Tools and patterns I use to ship reliable software.
         </p>
 
@@ -15,9 +15,9 @@ export function Skills() {
           {site.skills.map((skill) => (
             <Card key={skill.group}>
               <div className="text-sm font-semibold">{skill.group}</div>
-              <ul className="mt-3 grid gap-2 text-sm text-black/70 sm:grid-cols-2">
+              <ul className="mt-3 grid gap-2 text-sm text-black/70 dark:text-white/70 sm:grid-cols-2">
                 {skill.items.map((item) => (
-                  <li key={item} className="rounded-lg bg-black/5 px-3 py-2">
+                  <li key={item} className="rounded-lg bg-black/5 px-3 py-2 dark:bg-white/10">
                     {item}
                   </li>
                 ))}

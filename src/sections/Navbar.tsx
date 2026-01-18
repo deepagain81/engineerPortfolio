@@ -1,6 +1,7 @@
 import { Container } from "../components/Container";
 import { site } from "../data/site";
 import { ButtonLink } from "../components/Button";
+import { ThemeToggle } from "../components/ThemeToggle";
 
 const items = [
   { label: "Work", href: "#work" },
@@ -11,7 +12,7 @@ const items = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-40 border-b border-black/10 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-black/10 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-black/60">
       <Container>
         <div className="flex h-14 items-center justify-between">
           <a href="#top" className="font-semibold tracking-tight">
@@ -20,13 +21,14 @@ export function Nav() {
 
           <nav className="hidden gap-6 sm:flex">
             {items.map((item) => (
-              <a key={item.href} href={item.href} className="text-sm text-black/70 hover:text-black">
+              <a key={item.href} href={item.href} className="text-sm text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white">
                 {item.label}
               </a>
             ))}
           </nav>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <ButtonLink variant="secondary" href={site.ctas.secondary.href} className="hidden sm:inline-flex">
               {site.ctas.secondary.label}
             </ButtonLink>

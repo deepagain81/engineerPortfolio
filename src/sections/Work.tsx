@@ -1,6 +1,7 @@
 import { Container } from "../components/Container";
 import { Card } from "../components/Card";
 import { site } from "../data/site";
+import { motion } from "framer-motion";
 
 export function Work() {
   return (
@@ -16,15 +17,22 @@ export function Work() {
         </div>
 
         <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {site.projects.map((project) => (
-            <Card key={project.title}>
-              <div className="space-y-3">
-                <div>
-                  <div className="text-sm font-semibold">{project.title}</div>
-                  <div className="text-sm text-black/60">{project.subtitle}</div>
+          {site.projects.map((project, index) => (
+            <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+            >
+                <Card key={project.title}>
+                <div className="space-y-3">
+                    <div>
+                    <div className="text-sm font-semibold">{project.title}</div>
+                  <div className="text-sm text-black/60 dark:text-white/60">{project.subtitle}</div>
                 </div>
 
-                <ul className="list-disc space-y-1 pl-5 text-sm text-black/70">
+                <ul className="list-disc space-y-1 pl-5 text-sm text-black/70 dark:text-white/70">
                   {project.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
@@ -32,17 +40,21 @@ export function Work() {
 
                 <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-black/10 px-2.5 py-1 text-xs text-black/70">
+                    <span
+                      key={tag}
+                      className="rounded-full border border-black/10 px-2.5 py-1 text-xs text-black/70 dark:border-white/10 dark:text-white/70"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <a href={project.href} className="inline-flex text-sm font-medium text-black underline underline-offset-4">
-                  Ask me about this
-                </a>
-              </div>
-            </Card>
+                    <a href={project.href} className="inline-flex text-sm font-medium text-black underline underline-offset-4">
+                    Ask me about this
+                    </a>
+                </div>
+                </Card>
+            </motion.div>
           ))}
         </div>
       </Container>

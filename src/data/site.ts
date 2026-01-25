@@ -23,39 +23,6 @@ export const site = {
     "Testing culture + observability",
   ],
 
-  projects: [
-    {
-      title: "Retail App Modernization",
-      subtitle: "GraphQL migration + performance wins",
-      bullets: [
-        "Migrated REST → GraphQL to reduce over-fetching and improve UI responsiveness.",
-        "Introduced reliable monitoring signals and guardrails for regressions.",
-      ],
-      tags: ["React Native", "TypeScript", "GraphQL"],
-      href: "#contact",
-    },
-    {
-      title: "Secure WebView Integration",
-      subtitle: "JWT-based auth + fraud solution integration",
-      bullets: [
-        "Implemented secure JWT-based WebView handshake flows.",
-        "Reduced login errors and improved approval/conversion reliability.",
-      ],
-      tags: ["React Native", "Security", "Mobile"],
-      href: "#contact",
-    },
-    {
-      title: "Testing & Quality Uplift",
-      subtitle: "Unit testing patterns and maintainability",
-      bullets: [
-        "Established Jest + RTL conventions to increase coverage and confidence.",
-        "Improved developer velocity through reusable component patterns.",
-      ],
-      tags: ["Jest", "RTL", "DX"],
-      href: "#contact",
-    },
-  ],
-
   skills: [
     { group: "Frontend", items: ["React", "TypeScript", "Redux/RTK", "Accessibility (WCAG)"] },
     { group: "Mobile", items: ["React Native", "Kotlin", "WebView", "App performance"] },
@@ -73,6 +40,61 @@ export const site = {
       { label: "Email", href: "mailto:dchapagain.dev@gmail.com", external: false },
     ],
   },
+
+  // case studies: measurable outcomes and clear impact is important
+  projects: [
+    {
+        title: "Retail App Modernization",
+        context: "Tractor Supply Company (Consultant)",
+        problem:
+        "REST-driven screens were over-fetching data, increasing payload size and slowing UI responsiveness on mid-tier devices.",
+        approaches: [
+        "Migrated key surfaces from REST to GraphQL and designed query patterns to reduce unnecessary fields.",
+        "Improved UI rendering paths and added guardrails to catch regressions early.",
+        ],
+        impacts: [
+        { label: "Over-fetching", value: "↓ 40%" },
+        { label: "p90 render time", value: "↓ 120ms" },
+        ],
+        tech: ["React", "TypeScript", "GraphQL", "Performance"],
+        role: "Led front-end delivery; collaborated with backend and QA on release readiness.",
+        cta: { label: "Discuss this project", href: "#contact" },
+    },
+    {
+        title: "Secure WebView Integration",
+        context: "Retail Mobile App",
+        problem:
+        "Login reliability and fraud checks required a secure in-app WebView flow with consistent authentication and session handling.",
+        approaches: [
+        "Implemented JWT-based WebView handshake and session lifecycle controls.",
+        "Integrated third-party fraud solution while maintaining a smooth UX across devices.",
+        ],
+        impacts: [
+        { label: "Login errors", value: "↓ (measurable)" },
+        { label: "Order approval", value: "↑ (measurable)" },
+        ],
+        tech: ["React Native", "JWT", "Security", "WebView"],
+        role: "Owned integration design and implementation; partnered with security stakeholders.",
+        cta: { label: "Discuss this project", href: "#contact" },
+    },
+    {
+        title: "Testing & Observability Uplift",
+        context: "Southern California Edison",
+        problem:
+        "Legacy patterns and limited test coverage increased defect risk and slowed delivery.",
+        approaches: [
+        "Refactored class components to hooks and consolidated state patterns to improve maintainability.",
+        "Established Jest + RTL conventions and dashboards for proactive monitoring.",
+        ],
+        impacts: [
+        { label: "Unit coverage", value: "↑ to 80%" },
+        { label: "Bundle size", value: "↓ 9%" },
+        ],
+        tech: ["React", "Jest", "RTL", "Monitoring"],
+        role: "Drove quality standards; mentored teammates on testing patterns.",
+        cta: { label: "Discuss this project", href: "#contact" },
+    },
+  ],
 
   experiences: [
     {

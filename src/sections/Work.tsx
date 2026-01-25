@@ -1,15 +1,14 @@
-import { Container } from "../components/Container";
-import { site } from "../data/site";
-import { CaseStudyCard } from "../components/CaseStudyCard";
+import { CaseStudyCard, Container } from "@/components";
+import { SECTION_IDS, site } from "@/data";
 
 export function Work() {
   return (
-    <section id="work" className="py-12">
+    <section id={SECTION_IDS.work} className="py-12">
       <Container>
         <div>
-          <h2 className="text-2xl tracking-tight">Featured Work</h2>
-          <p className="mt-2 text-sm text-ink/60">
-            Selected projects framed as mini case studies: problem, approach, and measurable impact.
+          <h2 className="t-section">{site.sections.work.title}</h2>
+          <p className="t-muted mt-2">
+            {site.sections.work.description}
           </p>
         </div>
 

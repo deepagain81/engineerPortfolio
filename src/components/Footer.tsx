@@ -1,5 +1,5 @@
 import { Container } from "./Container";
-import { site } from "../data/site";
+import { site } from "@/data";
 
 export function Footer() {
   const footer = site.footer;
@@ -12,21 +12,21 @@ export function Footer() {
     .replace("{site.name}", site.name);
 
   return (
-    <footer className="border-t border-ink/10 py-8">
+    <footer className="border-t border-border py-8">
       <Container>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-ink/60">{copyright}</p>
+          <p className="text-sm text-muted">{copyright}</p>
 
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            {links.map((l) => (
+          <nav aria-label={site.labels.footerNav} className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            {links.map((link) => (
               <a
-                key={l.label}
-                href={l.href}
-                target={l.external ? "_blank" : undefined}
-                rel={l.external ? "noreferrer" : undefined}
-                className="text-ink/70 hover:text-accent underline underline-offset-4 decoration-transparent hover:decoration-accent/60 transition"
+                key={link.label}
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noreferrer" : undefined}
+                className="text-fg/80 hover:text-accent underline underline-offset-4 decoration-transparent hover:decoration-accent/60 transition"
               >
-                {l.label}
+                {link.label}
               </a>
             ))}
           </nav>

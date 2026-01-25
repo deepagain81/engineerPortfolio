@@ -5,14 +5,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "rgb(var(--ink) / <alpha-value>)",
-        page: "rgb(var(--page) / <alpha-value>)",
+        bg: "rgb(var(--bg) / <alpha-value>)",
         surface: "rgb(var(--surface) / <alpha-value>)",
+        border: "rgb(var(--border) / <alpha-value>)",
+        fg: "rgb(var(--fg) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
         accent: "rgb(var(--accent) / <alpha-value>)",
+        "accent-contrast": "rgb(var(--accent-contrast) / <alpha-value>)",
       },
       fontFamily: {
-        display: ["var(--font-display)"],
-        body: ["var(--font-body)"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Fraunces", "ui-serif", "Georgia", "serif"],
       },
       fontSize: {
         xs: ["calc(0.75rem * var(--type-scale))", { lineHeight: "1.4" }],

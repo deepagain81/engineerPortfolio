@@ -1,7 +1,5 @@
 import { Container } from "../components/Container";
-import { Card } from "../components/Card";
 import { site } from "../data/site";
-import { motion } from "framer-motion";
 
 export function Work() {
   return (

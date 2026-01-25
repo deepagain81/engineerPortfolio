@@ -12,16 +12,16 @@ const items = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-40 border-b border-black/10 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-black/60">
+    <header className="sticky top-0 z-40 border-b border-ink/10 bg-page/80 backdrop-blur">
       <Container>
         <div className="flex h-14 items-center justify-between">
-          <a href="#top" className="font-semibold tracking-tight">
+          <a href="#top" className="font-display text-lg tracking-tight">
             {site.name}
           </a>
 
           <nav className="hidden gap-6 sm:flex">
             {items.map((item) => (
-              <a key={item.href} href={item.href} className="text-sm text-black/70 hover:text-black dark:text-white/70 dark:hover:text-white">
+              <a key={item.href} href={item.href} className="text-sm text-ink/70 hover:text-ink">
                 {item.label}
               </a>
             ))}

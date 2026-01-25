@@ -8,10 +8,10 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
+    <div className="min-h-screen bg-page text-ink">
       <a
         href="#work"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-3 focus:py-2 focus:shadow"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-surface focus:px-3 focus:py-2 focus:shadow"
       >
         Skip to content
       </a>

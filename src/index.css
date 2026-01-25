@@ -3,7 +3,25 @@
 @tailwind utilities;
 
 :root {
+  --type-scale: 1;
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --weight-display: 600;
+  --weight-body: 400;
+  --weight-body-strong: 500;
+  --ink: 15 23 42;
+  --page: 248 250 252;
+  --surface: 255 255 255;
+  --accent: 99 102 241;
   color-scheme: light;
+}
+
+.dark {
+  --ink: 226 232 240;
+  --page: 2 6 23;
+  --surface: 15 23 42;
+  --accent: 99 102 241;
+  color-scheme: dark;
 }
 
 html {
@@ -16,10 +34,45 @@ html, body {
 
 body {
   margin: 0;
+  font-weight: var(--weight-body);
 }
 
 /* Improve text rendering a bit */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-page text-ink text-base;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-weight: var(--weight-display);
+    letter-spacing: -0.02em;
+  }
+
+  .weight-body {
+    font-weight: var(--weight-body);
+  }
+
+  .weight-strong {
+    font-weight: var(--weight-body-strong);
+  }
+
+  .weight-display {
+    font-weight: var(--weight-display);
+  }
 }

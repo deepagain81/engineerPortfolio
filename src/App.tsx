@@ -4,6 +4,7 @@ import { Work } from "./sections/Work";
 import { Skills } from "./sections/Skills";
 import { Experience } from "./sections/Experience";
 import { Contact } from "./sections/Contact";
+import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
@@ -25,11 +26,7 @@ export default function App() {
         <Contact />
       </main>
 
-      <footer className="border-t border-black/10 py-8 dark:border-white/10">
-        <div className="mx-auto w-full max-w-6xl px-4 text-sm text-black/60 dark:text-white/60">
-          © {new Date().getFullYear()} • Built with React + TypeScript
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

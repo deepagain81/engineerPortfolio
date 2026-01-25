@@ -15,11 +15,11 @@ export function Hero() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-5">
-              <p className="text-sm text-ink/60">
+              <p className="text-sm text-muted">
                 {site.role} • {site.location}
               </p>
 
-              <h1 className="text-3xl tracking-tight sm:text-5xl">
+              <h1 className="t-hero">
                 {site.tagline}
               </h1>
 
@@ -50,7 +50,7 @@ export function Hero() {
                 {site.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="rounded-full border border-ink/10 bg-ink/5 px-3.5 py-1.5 text-sm text-ink/70 weight-strong"
+                    className="rounded-full border border-border bg-fg/5 px-3.5 py-1.5 text-sm text-fg/80 font-medium"
                   >
                     {highlight}
                   </li>
@@ -58,7 +58,7 @@ export function Hero() {
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-ink/10 bg-gradient-to-b from-ink/5 to-transparent p-6">
+            <div className="rounded-3xl border border-border bg-gradient-to-b from-fg/5 to-transparent p-6">
               <div className="space-y-4">
                 <div className="text-sm text-ink/60">
                   Snapshot

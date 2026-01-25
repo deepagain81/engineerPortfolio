@@ -47,7 +47,7 @@ export function Contact() {
                 <input
                   name="name"
                   required
-                  className="mt-1 w-full rounded-xl border border-ink/15 bg-surface px-3 py-2 text-sm text-ink outline-none focus:ring-2 focus:ring-accent"
+                  className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-fg outline-none focus:ring-2 focus:ring-accent"
                 />
               </div>
 
@@ -57,13 +57,13 @@ export function Contact() {
                   name="message"
                   required
                   rows={5}
-                  className="mt-1 w-full rounded-xl border border-ink/15 bg-surface px-3 py-2 text-sm text-ink outline-none focus:ring-2 focus:ring-accent"
+                  className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-fg outline-none focus:ring-2 focus:ring-accent"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-xl bg-accent px-4 py-2 text-sm weight-strong text-white hover:bg-accent/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-page"
+                className="inline-flex w-full items-center justify-center rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-accent-contrast hover:bg-accent/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
               >
                 Send via email
               </button>

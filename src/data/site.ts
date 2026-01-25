@@ -64,6 +64,16 @@ export const site = {
     { group: "Observability", items: ["Dynatrace", "Splunk", "Crashlytics (if applicable)"] },
   ],
 
+  footer: {
+    copyright: "© {year} • {site.name}. All rights reserved.",
+    links: [
+      { label: "Resume", href: "/Deepak_Chapagain_Resume.pdf", external: false },
+      { label: "GitHub", href: "https://github.com/deepagain81", external: true },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/dchapagain/", external: true },
+      { label: "Email", href: "mailto:dchapagain.dev@gmail.com", external: false },
+    ],
+  },
+
   experiences: [
     {
       company: "Tractor Supply Company (Consultant)",

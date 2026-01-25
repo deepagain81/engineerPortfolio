@@ -17,8 +17,8 @@ export function Footer() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted">{copyright}</p>
 
-          <nav aria-label="Footer" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            {links.map((l) => (
+          <nav aria-label={site.labels.footerNav} className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}

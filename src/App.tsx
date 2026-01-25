@@ -10,10 +10,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-bg text-fg font-sans">
       <a
-        href="#work"
+        href={`#${SECTION_IDS.work}`}
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-surface focus:px-3 focus:py-2 focus:shadow"
       >
-        Skip to content
+        {site.labels.skipToContent}
       </a>
 
       <Nav />

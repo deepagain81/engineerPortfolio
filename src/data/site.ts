@@ -1,5 +1,6 @@
-// Single source of truth for all site content and data. 
-// This keeps it organized and makes it easy to update without digging through multiple files.
+import { LINK_LABELS, SECTION_IDS } from "./constants";
+
+// Single source of truth for all user-facing site content and data.
 export const site = {
   name: "Deepak Chapagain",
   role: "Software Engineer",
@@ -7,7 +8,7 @@ export const site = {
   tagline:
     "I build performant, accessible React and React Native products with pragmatic architecture and measurable outcomes.",
   ctas: {
-    primary: { label: "View Work", href: "#work" },
+    primary: { label: "View Work", href: `#${SECTION_IDS.work}` },
     secondary: { label: "Download Resume", href: "/Deepak_Chapagain_Resume.pdf" },
   },
 
@@ -23,6 +24,66 @@ export const site = {
     "Testing culture + observability",
   ],
 
+  sections: {
+    hero: {
+      body:
+        "I ship production-grade UI with strong performance, accessibility, and quality guardrails—built for teams that move fast without breaking things.",
+      links: {
+        linkedinLabel: LINK_LABELS.linkedin,
+      },
+      snapshot: {
+        title: "Snapshot",
+        items: [
+          { label: "Focus", value: "Front-end + Mobile" },
+          { label: "Strength", value: "Performance & Quality" },
+          { label: "API", value: "GraphQL + Auth" },
+          { label: "Workflow", value: "CI + Observability" },
+        ],
+      },
+    },
+    work: {
+      title: "Featured Work",
+      description:
+        "Selected projects framed as mini case studies: problem, approach, and measurable impact.",
+    },
+    skills: {
+      title: "Skills",
+      description: "Tools and patterns I use to ship reliable software.",
+    },
+    experience: {
+      title: "Experience",
+      description: "Recent roles and impact areas.",
+    },
+    contact: {
+      title: "Contact",
+      description:
+        "Want to discuss a role, a contract, or a collaboration? Email is best.",
+      actions: {
+        email: "Email me",
+        github: LINK_LABELS.github,
+        linkedin: LINK_LABELS.linkedin,
+      },
+      form: {
+        nameLabel: "Name",
+        messageLabel: "Message",
+        subjectPrefix: "Portfolio inquiry from",
+        submitLabel: "Send via email",
+        note: "This form opens your email client.",
+      },
+    },
+  },
+
+  labels: {
+    skipToContent: "Skip to content",
+    footerNav: "Footer",
+    caseStudy: {
+      problem: "Problem",
+      approach: "Approach",
+      tech: "Tech",
+      role: "My Role",
+    },
+  },
+
   skills: [
     { group: "Frontend", items: ["React", "TypeScript", "Redux/RTK", "Accessibility (WCAG)"] },
     { group: "Mobile", items: ["React Native", "Kotlin", "WebView", "App performance"] },
@@ -34,10 +95,10 @@ export const site = {
   footer: {
     copyright: "© {year} • {site.name}. All rights reserved.",
     links: [
-      { label: "Resume", href: "/Deepak_Chapagain_Resume.pdf", external: false },
-      { label: "GitHub", href: "https://github.com/deepagain81", external: true },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/dchapagain/", external: true },
-      { label: "Email", href: "mailto:dchapagain.dev@gmail.com", external: false },
+      { label: LINK_LABELS.resume, href: "/Deepak_Chapagain_Resume.pdf", external: false },
+      { label: LINK_LABELS.github, href: "https://github.com/deepagain81", external: true },
+      { label: LINK_LABELS.linkedin, href: "https://www.linkedin.com/in/dchapagain/", external: true },
+      { label: LINK_LABELS.email, href: "mailto:dchapagain.dev@gmail.com", external: false },
     ],
   },
 
@@ -58,7 +119,7 @@ export const site = {
         ],
         tech: ["React", "TypeScript", "GraphQL", "Performance"],
         role: "Led front-end delivery; collaborated with backend and QA on release readiness.",
-        cta: { label: "Discuss this project", href: "#contact" },
+        cta: { label: "Discuss this project", href: `#${SECTION_IDS.contact}` },
     },
     {
         title: "Secure WebView Integration",
@@ -75,7 +136,7 @@ export const site = {
         ],
         tech: ["React Native", "JWT", "Security", "WebView"],
         role: "Owned integration design and implementation; partnered with security stakeholders.",
-        cta: { label: "Discuss this project", href: "#contact" },
+        cta: { label: "Discuss this project", href: `#${SECTION_IDS.contact}` },
     },
     {
         title: "Testing & Observability Uplift",
@@ -92,7 +153,7 @@ export const site = {
         ],
         tech: ["React", "Jest", "RTL", "Monitoring"],
         role: "Drove quality standards; mentored teammates on testing patterns.",
-        cta: { label: "Discuss this project", href: "#contact" },
+        cta: { label: "Discuss this project", href: `#${SECTION_IDS.contact}` },
     },
   ],
 

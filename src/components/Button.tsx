@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = keyof typeof BUTTON_VARIANT;
 
 type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
@@ -30,10 +30,10 @@ const variants: Record<Variant, string> = {
 };
 
 
-export function ButtonLink({ variant = "primary", className = "", ...props }: AnchorProps) {
+export function ButtonLink({ variant = BUTTON_VARIANT.primary, className = "", ...props }: AnchorProps) {
   return <a className={`${base} ${variants[variant]} ${className}`} {...props} />;
 }
 
-export function Button({ variant = "primary", className = "", ...props }: NativeButtonProps) {
+export function Button({ variant = BUTTON_VARIANT.primary, className = "", ...props }: NativeButtonProps) {
   return <button className={`${base} ${variants[variant]} ${className}`} {...props} />;
 }

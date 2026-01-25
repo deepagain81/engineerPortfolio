@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 export function Hero() {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={HERO_ANIMATION.initial}
+      animate={HERO_ANIMATION.animate}
+      transition={HERO_ANIMATION.transition}
       className="space-y-5"
     >
-      <section id="top" className="py-12 sm:py-16">
+      <section id={SECTION_IDS.top} className="py-12 sm:py-16">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-5">
@@ -23,26 +23,24 @@ export function Hero() {
                 {site.tagline}
               </h1>
 
-              <p className="text-base text-ink/70 sm:text-lg">
-                I ship production-grade UI with strong performance,
-                accessibility, and quality guardrails—built for teams that move
-                fast without breaking things.
+              <p className="text-base text-fg/80 sm:text-lg">
+                {site.sections.hero.body}
               </p>
 
               <div className="flex flex-wrap gap-3">
                 <ButtonLink href={site.ctas.primary.href}>
                   {site.ctas.primary.label}
                 </ButtonLink>
-                <ButtonLink variant="secondary" href={site.ctas.secondary.href}>
+                <ButtonLink variant={BUTTON_VARIANT.secondary} href={site.ctas.secondary.href}>
                   {site.ctas.secondary.label}
                 </ButtonLink>
                 <ButtonLink
-                  variant="ghost"
+                  variant={BUTTON_VARIANT.ghost}
                   href={site.links.linkedin}
                   rel="noreferrer"
                   target="_blank"
                 >
-                  LinkedIn
+                  {site.sections.hero.links.linkedinLabel}
                 </ButtonLink>
               </div>
 
@@ -60,36 +58,19 @@ export function Hero() {
 
             <div className="rounded-3xl border border-border bg-gradient-to-b from-fg/5 to-transparent p-6">
               <div className="space-y-4">
-                <div className="text-sm text-ink/60">
-                  Snapshot
+                <div className="text-sm text-muted">
+                  {site.sections.hero.snapshot.title}
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-ink/10 bg-surface p-4 shadow-sm">
-                    <div className="text-xs text-ink/60">
-                      Focus
+                  {site.sections.hero.snapshot.items.map((item) => (
+                    <div
+                      key={item.label}
+                      className="rounded-2xl border border-border bg-surface p-4 shadow-sm"
+                    >
+                      <div className="text-xs text-muted">{item.label}</div>
+                      <div className="mt-1 font-medium">{item.value}</div>
                     </div>
-                    <div className="mt-1 weight-strong">Front-end + Mobile</div>
-                  </div>
-                  <div className="rounded-2xl border border-ink/10 bg-surface p-4 shadow-sm">
-                    <div className="text-xs text-ink/60">
-                      Strength
-                    </div>
-                    <div className="mt-1 weight-strong">
-                      Performance & Quality
-                    </div>
-                  </div>
-                  <div className="rounded-2xl border border-ink/10 bg-surface p-4 shadow-sm">
-                    <div className="text-xs text-ink/60">
-                      API
-                    </div>
-                    <div className="mt-1 weight-strong">GraphQL + Auth</div>
-                  </div>
-                  <div className="rounded-2xl border border-ink/10 bg-surface p-4 shadow-sm">
-                    <div className="text-xs text-ink/60">
-                      Workflow
-                    </div>
-                    <div className="mt-1 weight-strong">CI + Observability</div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

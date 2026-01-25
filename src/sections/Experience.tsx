@@ -4,11 +4,11 @@ import { site } from "../data/site";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-12">
+    <section id={SECTION_IDS.experience} className="py-12">
       <Container>
-        <h2 className="text-2xl tracking-tight">Experience</h2>
-        <p className="mt-2 text-sm text-ink/60">
-          Recent roles and impact areas.
+        <h2 className="text-2xl tracking-tight">{site.sections.experience.title}</h2>
+        <p className="mt-2 text-sm text-muted">
+          {site.sections.experience.description}
         </p>
 
         <div className="mt-6 grid gap-4">

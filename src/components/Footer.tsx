@@ -1,5 +1,5 @@
 import { Container } from "./Container";
-import { site } from "../data/site";
+import { site } from "@/data";
 
 export function Footer() {
   const footer = site.footer;

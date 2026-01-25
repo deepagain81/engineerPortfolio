@@ -1,5 +1,6 @@
 import { Card } from "./Card";
 import { ButtonLink } from "./Button";
+import { BUTTON_VARIANT, site } from "@/data";
 
 type Impact = Readonly<{ label: string; value: string }>;
 

@@ -1,14 +1,5 @@
-import { Container } from "../components/Container";
-import { site } from "../data/site";
-import { ButtonLink } from "../components/Button";
-import { ThemeToggle } from "../components/ThemeToggle";
-
-const items = [
-  { label: "Work", href: "#work" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+import { ButtonLink, Container, ThemeToggle } from "@/components";
+import { BUTTON_VARIANT, NAV_ITEMS, SECTION_IDS, site } from "@/data";
 
 export function Nav() {
   return (

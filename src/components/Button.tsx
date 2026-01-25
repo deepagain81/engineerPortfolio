@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import { BUTTON_VARIANT } from "@/data";
 
 type Variant = keyof typeof BUTTON_VARIANT;
 

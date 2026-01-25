@@ -1,6 +1,5 @@
-import { Container } from "../components/Container";
-import { ButtonLink } from "../components/Button";
-import { site } from "../data/site";
+import { ButtonLink, Container } from "@/components";
+import { BUTTON_VARIANT, HERO_ANIMATION, SECTION_IDS, site } from "@/data";
 import { motion } from "framer-motion";
 
 export function Hero() {

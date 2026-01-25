@@ -1,6 +1,5 @@
-import { Container } from "../components/Container";
-import { site } from "../data/site";
-import { CaseStudyCard } from "../components/CaseStudyCard";
+import { CaseStudyCard, Container } from "@/components";
+import { SECTION_IDS, site } from "@/data";
 
 export function Work() {
   return (

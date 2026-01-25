@@ -1,6 +1,5 @@
-import { Container } from "../components/Container";
-import { Card } from "../components/Card";
-import { site } from "../data/site";
+import { Card, Container } from "@/components";
+import { SECTION_IDS, site } from "@/data";
 
 export function Experience() {
   return (

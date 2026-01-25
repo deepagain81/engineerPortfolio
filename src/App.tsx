@@ -1,10 +1,6 @@
-import { Nav } from "./sections/Navbar";
-import { Hero } from "./sections/Hero";
-import { Work } from "./sections/Work";
-import { Skills } from "./sections/Skills";
-import { Experience } from "./sections/Experience";
-import { Contact } from "./sections/Contact";
-import { Footer } from "./components/Footer";
+import { Footer } from "@/components";
+import { SECTION_IDS, site } from "@/data";
+import { Contact, Experience, Hero, Nav, Skills, Work } from "@/sections";
 
 export default function App() {
   return (

@@ -1,7 +1,5 @@
-import { Container } from "../components/Container";
-import { ButtonLink } from "../components/Button";
-import { Card } from "../components/Card";
-import { site } from "../data/site";
+import { ButtonLink, Card, Container } from "@/components";
+import { BUTTON_VARIANT, SECTION_IDS, site } from "@/data";
 
 export function Contact() {
 

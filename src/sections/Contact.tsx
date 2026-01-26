@@ -1,7 +1,11 @@
-import { ButtonLink, Card, Container } from '@/components'
-import { BUTTON_VARIANT, SECTION_IDS, site } from '@/data'
+import { Card, Container, SocialLinks } from '@/components'
+import { SECTION_IDS, site } from '@/data'
 
 export function Contact() {
+  const links = Object.keys(site.sections.contact.actions).map(
+    (key) => site.social[key as keyof typeof site.social],
+  )
+
   const onFormSubmission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const form = event.currentTarget
@@ -10,7 +14,7 @@ export function Contact() {
     const message = String(data.get('message'))
     const subject = encodeURIComponent(`${site.sections.contact.form.subjectPrefix} ${name}`)
     const body = encodeURIComponent(message)
-    window.location.href = `${site.links.email}?subject=${subject}&body=${body}`
+    window.location.href = `${site.social.email.href}?subject=${subject}&body=${body}`
   }
 
   return (
@@ -22,13 +26,16 @@ export function Contact() {
             <p className="mt-2 text-sm text-muted">{site.sections.contact.description}</p>
 
             <div className="mt-4 flex flex-wrap gap-3">
-              <ButtonLink href={site.links.email}>{site.sections.contact.actions.email}</ButtonLink>
-              <ButtonLink variant={BUTTON_VARIANT.secondary} href={site.links.github}>
-                {site.sections.contact.actions.github}
-              </ButtonLink>
-              <ButtonLink variant={BUTTON_VARIANT.secondary} href={site.links.linkedin}>
-                {site.sections.contact.actions.linkedin}
-              </ButtonLink>
+              {links.map((item) => (
+                <div key={item.label} className="flex items-center">
+                  <div className="sm:hidden">
+                    <SocialLinks items={[item]} variant="iconOnly" />
+                  </div>
+                  <div className="hidden sm:block">
+                    <SocialLinks items={[item]} variant="iconLabel" />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

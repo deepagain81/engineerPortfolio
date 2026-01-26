@@ -1,12 +1,13 @@
 import { site } from '@/data'
 
 import { Container } from './Container'
+import { SocialLinks } from './SocialLinks'
 
 export function Footer() {
   const footer = site.footer
   if (!footer) return null
 
-  const { links } = footer
+  const links = footer.links.map((key) => site.social[key])
   const year = new Date().getFullYear()
   const copyright = footer.copyright
     .replace('{year}', String(year))
@@ -22,16 +23,15 @@ export function Footer() {
             aria-label={site.labels.footerNav}
             className="flex flex-wrap gap-x-4 gap-y-2 text-sm"
           >
-            {links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.external ? '_blank' : undefined}
-                rel={link.external ? 'noreferrer' : undefined}
-                className="text-fg/80 underline decoration-transparent underline-offset-4 transition hover:text-accent hover:decoration-accent/60"
-              >
-                {link.label}
-              </a>
+            {links.map((item) => (
+              <div key={item.label} className="flex items-center">
+                <div className="sm:hidden">
+                  <SocialLinks items={[item]} variant="iconOnly" />
+                </div>
+                <div className="hidden sm:block">
+                  <SocialLinks items={[item]} variant="iconLabel" />
+                </div>
+              </div>
             ))}
           </nav>
         </div>

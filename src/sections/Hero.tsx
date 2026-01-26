@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
-import { ButtonLink, Container } from '@/components'
-import { BUTTON_VARIANT, HERO_ANIMATION, SECTION_IDS, site } from '@/data'
+import { ButtonLink, Container, SocialLinks } from '@/components'
+import { HERO_ANIMATION, SECTION_IDS, site } from '@/data'
 
 export function Hero() {
   return (
@@ -25,17 +25,19 @@ export function Hero() {
 
               <div className="flex flex-wrap gap-3">
                 <ButtonLink href={site.ctas.primary.href}>{site.ctas.primary.label}</ButtonLink>
-                <ButtonLink variant={BUTTON_VARIANT.secondary} href={site.ctas.secondary.href}>
-                  {site.ctas.secondary.label}
-                </ButtonLink>
-                <ButtonLink
-                  variant={BUTTON_VARIANT.ghost}
-                  href={site.links.linkedin}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {site.sections.hero.links.linkedinLabel}
-                </ButtonLink>
+                <div className="sm:hidden">
+                  <SocialLinks items={[site.social.resume]} variant="iconOnly" />
+                </div>
+                <div className="hidden sm:block">
+                  <SocialLinks items={[site.social.resume]} variant="iconLabel" />
+                </div>
+
+                <div className="sm:hidden">
+                  <SocialLinks items={[site.social.linkedin]} variant="iconOnly" />
+                </div>
+                <div className="hidden sm:block">
+                  <SocialLinks items={[site.social.linkedin]} variant="iconLabel" />
+                </div>
               </div>
 
               <ul className="flex flex-wrap gap-2 pt-2">

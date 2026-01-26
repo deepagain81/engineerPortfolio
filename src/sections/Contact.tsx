@@ -1,20 +1,17 @@
-import { ButtonLink, Card, Container } from "@/components";
-import { BUTTON_VARIANT, SECTION_IDS, site } from "@/data";
+import { ButtonLink, Card, Container } from '@/components'
+import { BUTTON_VARIANT, SECTION_IDS, site } from '@/data'
 
 export function Contact() {
-
-    const onFormSubmission = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      const data = new FormData(form);
-      const name = String(data.get("name"));
-      const message = String(data.get("message"));
-      const subject = encodeURIComponent(
-        `${site.sections.contact.form.subjectPrefix} ${name}`
-      );
-      const body = encodeURIComponent(message);
-      window.location.href = `${site.links.email}?subject=${subject}&body=${body}`;
-    };
+  const onFormSubmission = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const form = event.currentTarget
+    const data = new FormData(form)
+    const name = String(data.get('name'))
+    const message = String(data.get('message'))
+    const subject = encodeURIComponent(`${site.sections.contact.form.subjectPrefix} ${name}`)
+    const body = encodeURIComponent(message)
+    window.location.href = `${site.links.email}?subject=${subject}&body=${body}`
+  }
 
   return (
     <section id={SECTION_IDS.contact} className="py-12 pb-16">
@@ -22,14 +19,10 @@ export function Contact() {
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           <div>
             <h2 className="text-2xl tracking-tight">{site.sections.contact.title}</h2>
-            <p className="mt-2 text-sm text-muted">
-              {site.sections.contact.description}
-            </p>
+            <p className="mt-2 text-sm text-muted">{site.sections.contact.description}</p>
 
             <div className="mt-4 flex flex-wrap gap-3">
-              <ButtonLink href={site.links.email}>
-                {site.sections.contact.actions.email}
-              </ButtonLink>
+              <ButtonLink href={site.links.email}>{site.sections.contact.actions.email}</ButtonLink>
               <ButtonLink variant={BUTTON_VARIANT.secondary} href={site.links.github}>
                 {site.sections.contact.actions.github}
               </ButtonLink>
@@ -40,10 +33,7 @@ export function Contact() {
           </div>
 
           <Card>
-            <form
-              onSubmit={onFormSubmission}
-              className="space-y-4"
-            >
+            <form onSubmit={onFormSubmission} className="space-y-4">
               <div>
                 <label className="text-sm font-semibold">
                   {site.sections.contact.form.nameLabel}
@@ -74,13 +64,11 @@ export function Contact() {
                 {site.sections.contact.form.submitLabel}
               </button>
 
-              <p className="text-xs text-muted">
-                {site.sections.contact.form.note}
-              </p>
+              <p className="text-xs text-muted">{site.sections.contact.form.note}</p>
             </form>
           </Card>
         </div>
       </Container>
     </section>
-  );
+  )
 }

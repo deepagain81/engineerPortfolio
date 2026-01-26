@@ -1,10 +1,16 @@
-import { Footer } from "@/components";
-import { SECTION_IDS, site } from "@/data";
-import { Contact, Experience, Hero, Nav, Skills, Work } from "@/sections";
+import { useEffect } from 'react'
+
+import { Footer } from '@/components'
+import { SECTION_IDS, site } from '@/data'
+import { Contact, Experience, Hero, Nav, Skills, Work } from '@/sections'
 
 export default function App() {
+  useEffect(() => {
+    document.title = `${site.name} - ${site.role}`
+  }, [])
+
   return (
-    <div className="min-h-screen bg-bg text-fg font-sans">
+    <div className="min-h-screen bg-bg font-sans text-fg">
       <a
         href={`#${SECTION_IDS.work}`}
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-surface focus:px-3 focus:py-2 focus:shadow"
@@ -24,5 +30,5 @@ export default function App() {
 
       <Footer />
     </div>
-  );
+  )
 }

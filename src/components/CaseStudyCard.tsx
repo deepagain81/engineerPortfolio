@@ -1,19 +1,20 @@
-import { Card } from "./Card";
-import { ButtonLink } from "./Button";
-import { BUTTON_VARIANT, site } from "@/data";
+import { BUTTON_VARIANT, site } from '@/data'
 
-type Impact = Readonly<{ label: string; value: string }>;
+import { ButtonLink } from './Button'
+import { Card } from './Card'
+
+type Impact = Readonly<{ label: string; value: string }>
 
 export type CaseStudy = Readonly<{
-  title: string;
-  context: string;
-  problem: string;
-  approaches: readonly string[];
-  impacts: readonly Impact[];
-  tech: readonly string[];
-  role: string;
-  cta: Readonly<{ label: string; href: string }>;
-}>;
+  title: string
+  context: string
+  problem: string
+  approaches: readonly string[]
+  impacts: readonly Impact[]
+  tech: readonly string[]
+  role: string
+  cta: Readonly<{ label: string; href: string }>
+}>
 
 export function CaseStudyCard({ project }: { project: CaseStudy }) {
   return (
@@ -45,10 +46,7 @@ export function CaseStudyCard({ project }: { project: CaseStudy }) {
         {project.impacts.length > 0 && (
           <div className="grid gap-2 sm:grid-cols-2">
             {project.impacts.map((impact) => (
-              <div
-                key={impact.label}
-                className="rounded-xl border border-border bg-fg/5 px-3 py-2"
-              >
+              <div key={impact.label} className="rounded-xl border border-border bg-fg/5 px-3 py-2">
                 <div className="text-xs text-muted">{impact.label}</div>
                 <div className="text-sm font-semibold">{impact.value}</div>
               </div>
@@ -84,5 +82,5 @@ export function CaseStudyCard({ project }: { project: CaseStudy }) {
         </ButtonLink>
       </div>
     </Card>
-  );
+  )
 }

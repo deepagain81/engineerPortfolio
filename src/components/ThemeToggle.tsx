@@ -1,7 +1,7 @@
-import { useTheme } from "./useTheme";
+import { useTheme } from './useTheme'
 
 export function ThemeToggle() {
-  const { theme, toggle } = useTheme();
+  const { theme, toggle } = useTheme()
 
   return (
     <button
@@ -12,7 +12,7 @@ export function ThemeToggle() {
                  focus-visible:ring-offset-bg"
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? "Light" : "Dark"}
+      {theme === 'dark' ? 'Light' : 'Dark'}
     </button>
-  );
+  )
 }

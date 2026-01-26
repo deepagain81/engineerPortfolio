@@ -1,5 +1,32 @@
 import { LINK_LABELS, SECTION_IDS } from './constants'
 
+const social = {
+  resume: {
+    label: LINK_LABELS.resume,
+    href: '/Deepak_Chapagain_Resume.pdf',
+    external: true,
+    icon: 'download',
+  },
+  github: {
+    label: LINK_LABELS.github,
+    href: 'https://github.com/deepagain81',
+    external: true,
+    icon: 'github',
+  },
+  linkedin: {
+    label: LINK_LABELS.linkedin,
+    href: 'https://www.linkedin.com/in/dchapagain/',
+    external: true,
+    icon: 'linkedin',
+  },
+  email: {
+    label: LINK_LABELS.email,
+    href: 'mailto:dchapagain.dev@gmail.com',
+    external: false,
+    icon: 'mail',
+  },
+} as const
+
 // Single source of truth for all user-facing site content and data.
 export const site = {
   name: 'Deepak Chapagain',
@@ -9,33 +36,26 @@ export const site = {
     'I build performant, accessible React and React Native products with pragmatic architecture and measurable outcomes.',
   ctas: {
     primary: { label: 'View Work', href: `#${SECTION_IDS.work}` },
-    secondary: { label: 'Download Resume', href: '/Deepak_Chapagain_Resume.pdf' },
+    secondary: { label: 'Resume', href: social.resume.href, icon: social.resume },
   },
 
-  links: {
-    github: 'https://github.com/deepagain81',
-    linkedin: 'https://www.linkedin.com/in/dchapagain/',
-    email: 'mailto:dchapagain.dev@gmail.com',
-  },
+  social,
 
   highlights: [
     'React / TypeScript / React Native / Node / Kotlin / Java',
-    'GraphQL + secure auth patterns',
-    'Testing culture + observability',
+    'REST / GraphQL / Secure auth pattern',
+    'Testing culture / Observability',
   ],
 
   sections: {
     hero: {
-      body: 'I ship production-grade UI with strong performance, accessibility, and quality guardrails—built for teams that move fast without breaking things.',
-      links: {
-        linkedinLabel: LINK_LABELS.linkedin,
-      },
+      body: 'I ship production-grade UI with strong performance, accessibility, and quality guardrails - built for teams that move fast without breaking things.',
       snapshot: {
         title: 'Snapshot',
         items: [
           { label: 'Focus', value: 'Front-end + Mobile' },
-          { label: 'Strength', value: 'Performance & Quality' },
-          { label: 'API', value: 'GraphQL + Auth' },
+          { label: 'Strength', value: 'Performance + Quality' },
+          { label: 'API', value: 'REST + GraphQL + Auth' },
           { label: 'Workflow', value: 'CI + Observability' },
         ],
       },
@@ -57,7 +77,7 @@ export const site = {
       title: 'Contact',
       description: 'Want to discuss a role, a contract, or a collaboration? Email is best.',
       actions: {
-        email: 'Email me',
+        email: LINK_LABELS.email,
         github: LINK_LABELS.github,
         linkedin: LINK_LABELS.linkedin,
       },
@@ -87,21 +107,12 @@ export const site = {
     { group: 'Mobile', items: ['React Native', 'Kotlin', 'WebView', 'App performance'] },
     { group: 'API & Data', items: ['GraphQL', 'REST', 'JWT auth patterns'] },
     { group: 'Quality', items: ['Jest', 'React Testing Library', 'CI checks'] },
-    { group: 'Observability', items: ['Dynatrace', 'Splunk', 'Crashlytics (if applicable)'] },
+    { group: 'Observability', items: ['Dynatrace', 'Splunk', 'Crashlytics', 'Quantum Metric'] },
   ],
 
   footer: {
     copyright: '© {year} • {site.name}. All rights reserved.',
-    links: [
-      { label: LINK_LABELS.resume, href: '/Deepak_Chapagain_Resume.pdf', external: false },
-      { label: LINK_LABELS.github, href: 'https://github.com/deepagain81', external: true },
-      {
-        label: LINK_LABELS.linkedin,
-        href: 'https://www.linkedin.com/in/dchapagain/',
-        external: true,
-      },
-      { label: LINK_LABELS.email, href: 'mailto:dchapagain.dev@gmail.com', external: false },
-    ],
+    links: ['resume', 'github', 'linkedin', 'email'],
   },
 
   // case studies: measurable outcomes and clear impact is important
@@ -133,8 +144,8 @@ export const site = {
         'Integrated third-party fraud solution while maintaining a smooth UX across devices.',
       ],
       impacts: [
-        { label: 'Login errors', value: '↓ (measurable)' },
-        { label: 'Order approval', value: '↑ (measurable)' },
+        { label: 'Login errors', value: '↓ 10%' },
+        { label: 'Conversion', value: '↑ 1.45 PP' },
       ],
       tech: ['React Native', 'JWT', 'Security', 'WebView'],
       role: 'Owned integration design and implementation; partnered with security stakeholders.',
@@ -150,7 +161,7 @@ export const site = {
         'Established Jest + RTL conventions and dashboards for proactive monitoring.',
       ],
       impacts: [
-        { label: 'Unit coverage', value: '↑ to 80%' },
+        { label: 'Unit coverage', value: '↑ to 85%' },
         { label: 'Bundle size', value: '↓ 9%' },
       ],
       tech: ['React', 'Jest', 'RTL', 'Monitoring'],

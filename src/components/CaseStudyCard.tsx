@@ -77,7 +77,7 @@ export function CaseStudyCard({ project }: { project: CaseStudy }) {
           <p className="text-sm text-fg/80">{project.role}</p>
         </div>
 
-        <ButtonLink href={project.cta.href} variant={BUTTON_VARIANT.secondary}>
+        <ButtonLink href={project.cta.href} variant={BUTTON_VARIANT.primary}>
           {project.cta.label}
         </ButtonLink>
       </div>

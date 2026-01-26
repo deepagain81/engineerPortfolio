@@ -31,3 +31,18 @@ export const BUTTON_VARIANT = {
   secondary: 'secondary',
   ghost: 'ghost',
 } as const
+
+export const ICON_DISPLAY_TYPE = {
+  iconOnly: 'iconOnly',
+  iconLabel: 'iconLabel',
+} as const
+
+export const THEME_TYPE = {
+  light: 'light',
+  dark: 'dark',
+} as const
+
+export const THEME_LABELS = {
+  light: 'Light',
+  dark: 'Dark',
+} as const

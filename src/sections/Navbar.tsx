@@ -1,5 +1,5 @@
-import { ButtonLink, Container, ThemeToggle } from '@/components'
-import { BUTTON_VARIANT, NAV_ITEMS, SECTION_IDS, site } from '@/data'
+import { ButtonLink, Container, SocialLinks, ThemeToggle } from '@/components'
+import { NAV_ITEMS, SECTION_IDS, site } from '@/data'
 
 export function Nav() {
   return (
@@ -17,16 +17,15 @@ export function Nav() {
               </a>
             ))}
           </nav>
-
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <ButtonLink
-              variant={BUTTON_VARIANT.secondary}
-              href={site.ctas.secondary.href}
-              className="hidden sm:inline-flex"
-            >
-              {site.ctas.secondary.label}
-            </ButtonLink>
+            <div className="sm:hidden">
+              <SocialLinks items={[site.ctas.secondary.icon]} variant="iconOnly" />
+            </div>
+            <div className="hidden sm:block">
+              <SocialLinks items={[site.ctas.secondary.icon]} variant="iconLabel" />
+            </div>
+
             <ButtonLink href={site.ctas.primary.href}>{site.ctas.primary.label}</ButtonLink>
           </div>
         </div>

@@ -1,5 +1,5 @@
-import { CaseStudyCard, Container } from "@/components";
-import { SECTION_IDS, site } from "@/data";
+import { CaseStudyCard, Container } from '@/components'
+import { SECTION_IDS, site } from '@/data'
 
 export function Work() {
   return (
@@ -7,9 +7,7 @@ export function Work() {
       <Container>
         <div>
           <h2 className="t-section">{site.sections.work.title}</h2>
-          <p className="t-muted mt-2">
-            {site.sections.work.description}
-          </p>
+          <p className="t-muted mt-2">{site.sections.work.description}</p>
         </div>
 
         <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -19,5 +17,5 @@ export function Work() {
         </div>
       </Container>
     </section>
-  );
+  )
 }

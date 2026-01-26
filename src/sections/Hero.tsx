@@ -1,6 +1,7 @@
-import { ButtonLink, Container } from "@/components";
-import { BUTTON_VARIANT, HERO_ANIMATION, SECTION_IDS, site } from "@/data";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
+
+import { ButtonLink, Container } from '@/components'
+import { BUTTON_VARIANT, HERO_ANIMATION, SECTION_IDS, site } from '@/data'
 
 export function Hero() {
   return (
@@ -18,18 +19,12 @@ export function Hero() {
                 {site.role} • {site.location}
               </p>
 
-              <h1 className="t-hero">
-                {site.tagline}
-              </h1>
+              <h1 className="t-hero">{site.tagline}</h1>
 
-              <p className="text-base text-fg/80 sm:text-lg">
-                {site.sections.hero.body}
-              </p>
+              <p className="text-base text-fg/80 sm:text-lg">{site.sections.hero.body}</p>
 
               <div className="flex flex-wrap gap-3">
-                <ButtonLink href={site.ctas.primary.href}>
-                  {site.ctas.primary.label}
-                </ButtonLink>
+                <ButtonLink href={site.ctas.primary.href}>{site.ctas.primary.label}</ButtonLink>
                 <ButtonLink variant={BUTTON_VARIANT.secondary} href={site.ctas.secondary.href}>
                   {site.ctas.secondary.label}
                 </ButtonLink>
@@ -47,7 +42,7 @@ export function Hero() {
                 {site.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="rounded-full border border-border bg-fg/5 px-3.5 py-1.5 text-sm text-fg/80 font-medium"
+                    className="rounded-full border border-border bg-fg/5 px-3.5 py-1.5 text-sm font-medium text-fg/80"
                   >
                     {highlight}
                   </li>
@@ -57,9 +52,7 @@ export function Hero() {
 
             <div className="rounded-3xl border border-border bg-gradient-to-b from-fg/5 to-transparent p-6">
               <div className="space-y-4">
-                <div className="text-sm text-muted">
-                  {site.sections.hero.snapshot.title}
-                </div>
+                <div className="text-sm text-muted">{site.sections.hero.snapshot.title}</div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {site.sections.hero.snapshot.items.map((item) => (
                     <div
@@ -77,5 +70,5 @@ export function Hero() {
         </Container>
       </section>
     </motion.div>
-  );
+  )
 }

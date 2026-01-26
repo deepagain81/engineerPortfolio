@@ -1,14 +1,12 @@
-import { Card, Container } from "@/components";
-import { SECTION_IDS, site } from "@/data";
+import { Card, Container } from '@/components'
+import { SECTION_IDS, site } from '@/data'
 
 export function Experience() {
   return (
     <section id={SECTION_IDS.experience} className="py-12">
       <Container>
         <h2 className="text-2xl tracking-tight">{site.sections.experience.title}</h2>
-        <p className="mt-2 text-sm text-muted">
-          {site.sections.experience.description}
-        </p>
+        <p className="mt-2 text-sm text-muted">{site.sections.experience.description}</p>
 
         <div className="mt-6 grid gap-4">
           {site.experiences.map((experience) => (
@@ -31,5 +29,5 @@ export function Experience() {
         </div>
       </Container>
     </section>
-  );
+  )
 }

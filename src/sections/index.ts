@@ -1,7 +1,6 @@
-export { Contact } from "./Contact";
-export { Experience } from "./Experience";
-export { Hero } from "./Hero";
-export { Nav } from "./Navbar";
-export { Skills } from "./Skills";
-export { Work } from "./Work";
-
+export { Contact } from './Contact'
+export { Experience } from './Experience'
+export { Hero } from './Hero'
+export { Nav } from './Navbar'
+export { Skills } from './Skills'
+export { Work } from './Work'

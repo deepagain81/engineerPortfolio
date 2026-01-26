@@ -1,14 +1,12 @@
-import { Card, Container } from "@/components";
-import { SECTION_IDS, site } from "@/data";
+import { Card, Container } from '@/components'
+import { SECTION_IDS, site } from '@/data'
 
 export function Skills() {
   return (
     <section id={SECTION_IDS.skills} className="py-12">
       <Container>
         <h2 className="text-2xl tracking-tight">{site.sections.skills.title}</h2>
-        <p className="mt-2 text-sm text-muted">
-          {site.sections.skills.description}
-        </p>
+        <p className="mt-2 text-sm text-muted">{site.sections.skills.description}</p>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {site.skills.map((skill) => (
@@ -26,5 +24,5 @@ export function Skills() {
         </div>
       </Container>
     </section>
-  );
+  )
 }

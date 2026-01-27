@@ -11,7 +11,7 @@ export function ThemeToggle() {
 
   return (
     <IconButton label="Toggle theme" onClick={toggle} type="button" className="px-2">
-      <Icon size={18} />
+      <Icon aria-hidden="true" focusable="false" size={18} />
       <span className="hidden text-sm sm:inline">
         {isDark ? THEME_LABELS.light : THEME_LABELS.dark}
       </span>

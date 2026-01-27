@@ -12,7 +12,7 @@ export function Nav() {
 
           <nav className="hidden gap-6 sm:flex">
             {NAV_ITEMS.map((item) => (
-              <a key={item.href} href={item.href} className="text-sm text-fg/70 hover:text-fg">
+              <a key={item.href} href={item.href} className="px-2 text-sm text-fg/80 hover:text-fg">
                 {item.label}
               </a>
             ))}

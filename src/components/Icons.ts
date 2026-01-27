@@ -1,5 +1,5 @@
 import { Download, Mail, Moon, Sun } from 'lucide-react'
-import { ComponentType, SVGProps } from 'react'
+import { ComponentType } from 'react'
 import { SiGithub, SiLinkedin } from 'react-icons/si'
 
 type IconComponent = ComponentType<SVGProps<SVGSVGElement> & { size?: number | string }>

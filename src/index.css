@@ -5,24 +5,24 @@
 :root {
   --bg: 252 252 253;
   --surface: 247 247 250;
-  --border: 228 228 231;
+  --border: 145 145 155;
 
   --fg: 10 10 10;
-  --muted: 82 82 91;
+  --muted: 100 100 110;
 
-  --accent: 99 102 241;
+  --accent: 79 70 229;
   --accent-contrast: 255 255 255;
 
   --type-scale: 1;
 }
 
-.dark {
+:root.dark {
   --bg: 10 10 10;
   --surface: 17 17 17;
-  --border: 39 39 42;
+  --border: 105 105 115;
 
   --fg: 244 244 245;
-  --muted: 161 161 170;
+  --muted: 130 130 140;
 
   --accent: 129 140 248;
   --accent-contrast: 9 9 11;
@@ -34,6 +34,8 @@ html {
 
 body {
   margin: 0;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
 }
 
 /* Improve text rendering a bit */
@@ -44,7 +46,7 @@ body {
 
 @layer components {
   .t-hero {
-    @apply font-display text-4xl sm:text-5xl font-semibold tracking-tight;
+    @apply font-display text-4xl sm:text-5xl font-semibold tracking-tight text-fg;
   }
   .t-section {
     @apply font-display text-2xl sm:text-3xl font-semibold tracking-tight;
@@ -56,6 +58,24 @@ body {
     @apply text-sm text-muted leading-6;
   }
   .t-label {
-    @apply text-xs uppercase tracking-widest text-muted;
+    @apply text-xs font-semibold uppercase tracking-wide text-muted;
+  }
+  .t-tech {
+    @apply rounded-full border border-border px-2.5 py-1 text-xs text-fg/90;
+  }
+  .t-pill {
+    @apply rounded-full border border-border bg-fg/5 px-3.5 py-1.5 text-sm font-medium text-fg;
+  }
+  .t-card-meta {
+    @apply text-sm text-fg/90;
+  }
+  .t-input {
+    @apply mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-fg outline-none focus:ring-2 focus:ring-accent;
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    color: rgb(var(--muted));
   }
 }

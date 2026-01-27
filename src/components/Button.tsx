@@ -34,15 +34,25 @@ const variants: Record<Variant, string> = {
 export function ButtonLink({
   variant = BUTTON_VARIANT.primary,
   className = '',
+  children,
   ...props
 }: AnchorProps) {
-  return <a className={`${base} ${variants[variant]} ${className}`} {...props} />
+  return (
+    <a className={`${base} ${variants[variant]} ${className}`} {...props}>
+      {children}
+    </a>
+  )
 }
 
 export function Button({
   variant = BUTTON_VARIANT.primary,
   className = '',
+  children,
   ...props
 }: NativeButtonProps) {
-  return <button className={`${base} ${variants[variant]} ${className}`} {...props} />
+  return (
+    <button className={`${base} ${variants[variant]} ${className}`} {...props}>
+      {children}
+    </button>
+  )
 }

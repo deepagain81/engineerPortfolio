@@ -22,21 +22,17 @@ export function CaseStudyCard({ project }: { project: CaseStudy }) {
       <div className="space-y-4">
         <div>
           <h3 className="text-sm tracking-tightish">{project.title}</h3>
-          <div className="text-sm text-muted">{project.context}</div>
+          <div className="t-muted">{project.context}</div>
         </div>
 
         <div className="space-y-1">
-          <div className="text-xs font-semibold uppercase tracking-wide text-muted">
-            {site.labels.caseStudy.problem}
-          </div>
-          <p className="text-sm text-fg/80">{project.problem}</p>
+          <div className="t-label">{site.labels.caseStudy.problem}</div>
+          <p className="t-card-meta">{project.problem}</p>
         </div>
 
         <div className="space-y-1">
-          <div className="text-xs font-semibold uppercase tracking-wide text-muted">
-            {site.labels.caseStudy.approach}
-          </div>
-          <ul className="list-disc space-y-1 pl-5 text-sm text-fg/80">
+          <div className="t-label">{site.labels.caseStudy.approach}</div>
+          <ul className="t-card-meta list-disc space-y-1 pl-5">
             {project.approaches.map((approach) => (
               <li key={approach}>{approach}</li>
             ))}
@@ -55,15 +51,10 @@ export function CaseStudyCard({ project }: { project: CaseStudy }) {
         )}
 
         <div className="space-y-2">
-          <div className="text-xs font-semibold uppercase tracking-wide text-muted">
-            {site.labels.caseStudy.tech}
-          </div>
+          <div className="t-label">{site.labels.caseStudy.tech}</div>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-border px-2.5 py-1 text-xs text-fg/80"
-              >
+              <span key={item} className="t-tech">
                 {item}
               </span>
             ))}
@@ -71,10 +62,8 @@ export function CaseStudyCard({ project }: { project: CaseStudy }) {
         </div>
 
         <div className="space-y-1">
-          <div className="text-xs font-semibold uppercase tracking-wide text-muted">
-            {site.labels.caseStudy.role}
-          </div>
-          <p className="text-sm text-fg/80">{project.role}</p>
+          <div className="t-label">{site.labels.caseStudy.role}</div>
+          <p className="t-card-meta">{project.role}</p>
         </div>
 
         <ButtonLink href={project.cta.href} variant={BUTTON_VARIANT.primary}>

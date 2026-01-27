@@ -33,7 +33,7 @@ export const site = {
   role: 'Software Engineer',
   location: 'Nashville, TN',
   tagline:
-    'I build performant, accessible React and React Native products with pragmatic architecture and measurable outcomes.',
+    'I build performant, accessible React and React Native products with pragmatic architecture and measurable impacts.',
   ctas: {
     primary: { label: 'View Work', href: `#${SECTION_IDS.work}` },
     secondary: { label: 'Resume', href: social.resume.href, icon: social.resume },
@@ -63,7 +63,7 @@ export const site = {
     work: {
       title: 'Featured Work',
       description:
-        'Selected projects framed as mini case studies: problem, approach, and measurable impact.',
+        'Selected projects framed as mini case studies - problem, approach, and measurable impact.',
     },
     skills: {
       title: 'Skills',
@@ -75,7 +75,7 @@ export const site = {
     },
     contact: {
       title: 'Contact',
-      description: 'Want to discuss a role, a contract, or a collaboration? Email is best.',
+      description: 'Want to discuss a role, a contract, or a collaboration? Email works best.',
       actions: {
         email: LINK_LABELS.email,
         github: LINK_LABELS.github,

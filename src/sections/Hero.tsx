@@ -15,13 +15,13 @@ export function Hero() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-5">
-              <p className="text-sm text-muted">
+              <p className="t-muted">
                 {site.role} • {site.location}
               </p>
 
               <h1 className="t-hero">{site.tagline}</h1>
 
-              <p className="text-base text-fg/80 sm:text-lg">{site.sections.hero.body}</p>
+              <p className="t-body text-fg sm:text-lg">{site.sections.hero.body}</p>
 
               <div className="flex flex-wrap gap-3">
                 <ButtonLink href={site.ctas.primary.href}>{site.ctas.primary.label}</ButtonLink>
@@ -42,10 +42,7 @@ export function Hero() {
 
               <ul className="flex flex-wrap gap-2 pt-2">
                 {site.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="rounded-full border border-border bg-fg/5 px-3.5 py-1.5 text-sm font-medium text-fg/80"
-                  >
+                  <li key={highlight} className="t-pill">
                     {highlight}
                   </li>
                 ))}
@@ -54,14 +51,14 @@ export function Hero() {
 
             <div className="rounded-3xl border border-border bg-gradient-to-b from-fg/5 to-transparent p-6">
               <div className="space-y-4">
-                <div className="text-sm text-muted">{site.sections.hero.snapshot.title}</div>
+                <div className="t-muted">{site.sections.hero.snapshot.title}</div>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {site.sections.hero.snapshot.items.map((item) => (
                     <div
                       key={item.label}
                       className="rounded-2xl border border-border bg-surface p-4 shadow-sm"
                     >
-                      <div className="text-xs text-muted">{item.label}</div>
+                      <div className="text-xs text-fg">{item.label}</div>
                       <div className="mt-1 font-medium">{item.value}</div>
                     </div>
                   ))}

@@ -22,8 +22,8 @@ export function Contact() {
       <Container>
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           <div>
-            <h2 className="text-2xl tracking-tight">{site.sections.contact.title}</h2>
-            <p className="mt-2 text-sm text-muted">{site.sections.contact.description}</p>
+            <h2 className="t-section">{site.sections.contact.title}</h2>
+            <p className="t-muted mt-2">{site.sections.contact.description}</p>
 
             <div className="mt-4 flex flex-wrap gap-3">
               {links.map((item) => (
@@ -42,25 +42,22 @@ export function Contact() {
           <Card>
             <form onSubmit={onFormSubmission} className="space-y-4">
               <div>
-                <label className="text-sm font-semibold">
+                <label htmlFor="contact-name" className="text-sm font-semibold">
                   {site.sections.contact.form.nameLabel}
                 </label>
-                <input
-                  name="name"
-                  required
-                  className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-fg outline-none focus:ring-2 focus:ring-accent"
-                />
+                <input id="contact-name" name="name" required className="t-input" />
               </div>
 
               <div>
-                <label className="text-sm font-semibold">
+                <label htmlFor="contact-message" className="text-sm font-semibold">
                   {site.sections.contact.form.messageLabel}
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   required
                   rows={5}
-                  className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-fg outline-none focus:ring-2 focus:ring-accent"
+                  className="t-input"
                 />
               </div>
 

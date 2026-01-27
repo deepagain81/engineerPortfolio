@@ -1,11 +1,8 @@
 import { Download, Mail, Moon, Sun } from 'lucide-react'
-import { ComponentType } from 'react'
+import { ComponentType, SVGProps } from 'react'
 import { SiGithub, SiLinkedin } from 'react-icons/si'
 
-type IconComponent = ComponentType<{
-  className?: string
-  size?: number | string
-}>
+type IconComponent = ComponentType<SVGProps<SVGSVGElement> & { size?: number | string }>
 
 export const iconMap = {
   download: Download as unknown as IconComponent,

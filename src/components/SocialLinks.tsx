@@ -34,7 +34,7 @@ export function SocialLinks({
             rel={external ? 'noopener noreferrer' : undefined}
             className={variant === ICON_DISPLAY_TYPE.iconOnly ? 'px-2' : ''}
           >
-            <Icon size={iconSize} />
+            <Icon aria-hidden="true" focusable="false" size={iconSize} />
             {variant === ICON_DISPLAY_TYPE.iconLabel && (
               <span className="text-sm">{item.label}</span>
             )}

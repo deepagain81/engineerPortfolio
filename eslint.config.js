@@ -25,6 +25,7 @@ export default tseslint.config(
       tailwindcss,
     },
     rules: {
+      ...jsxA11y.flatConfigs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'simple-import-sort/imports': 'error',

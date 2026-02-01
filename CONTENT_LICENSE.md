@@ -19,8 +19,6 @@ This file applies **only** to the **Content** repository (defined below).
 including React/TypeScript components, Tailwind styles/layout, and build tooling,
 except where a file is clearly Content.
 
-
-
 ## 2) What you are allowed to do (Content)
 
 You may, **for personal evaluation** (e.g., learning, reviewing, interviewing):

@@ -1,7 +1,7 @@
 # Deepak Chapagain - Engineer Portfolio
 
 A **mobile-first, production-grade** portfolio site built with **React + TypeScript + Vite**.  
-Selected work is framed as **mini case studies**: *problem → approach → measurable impact*.
+Selected work is framed as **mini case studies**: _problem → approach → measurable impact_.
 
 **Live:** [deepakchapagain.com](URL)  
 **Resume:** [/resume.pdf](URL)
@@ -24,8 +24,6 @@ Selected work is framed as **mini case studies**: *problem → approach → meas
 - PR quality gates (format + lint + typecheck)
 
 ---
-
-
 
 ## Tech stack
 
@@ -50,10 +48,10 @@ This repo is set up with quality checks designed to match how teams ship product
 - **One-command quality gate:** `npm run quality` → lint + format check + typecheck
 
 > Recommended GitHub settings:
+>
 > - **Squash merge only**
 > - **Require status checks to pass before merge**
 > - Require PR (and at least 1 approval if you collaborate)
-
 
 Common commands:
 
@@ -61,7 +59,6 @@ Common commands:
 npm run quality        # lint + format:check + typecheck
 npm run quality:fix    # prettier --write + eslint --fix + typecheck
 ```
-
 
 ---
 
@@ -78,8 +75,8 @@ npm run quality:fix    # prettier --write + eslint --fix + typecheck
 npm ci
 npm run dev
 ```
-Open the local URL Vite prints (typically `http://localhost:5173`).
 
+Open the local URL Vite prints (typically `http://localhost:5173`).
 
 Build & preview:
 
@@ -106,14 +103,13 @@ index.css            # global styles / tokens
 ```
 
 Quick edits:
+
 - Update **site metadata** (title/description/OG): `index.html`
 - Update **content** (hero, projects, experience): `src/data/`
 - Update **social links**: `src/data`
 - Replace **resume**: `public/resume.pdf`
 
-
 ---
-
 
 ## About
 
@@ -141,7 +137,4 @@ Want to discuss a role, a contract, or a collaboration? **Email is best.**
 
 If you publish a fork/derivative, please **remove/replace all personal content** first.
 
-
 ---
-
-

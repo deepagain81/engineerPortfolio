@@ -1,3 +1,3 @@
 export function createTimeoutSignal(timeoutMs: number): AbortSignal {
-  return AbortSignal.timeout(timeoutMs);
+  return AbortSignal.timeout(timeoutMs)
 }

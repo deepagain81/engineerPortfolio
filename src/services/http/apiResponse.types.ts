@@ -1,40 +1,36 @@
 export interface ApiResponse<T = unknown> {
-  ok: boolean;
-  code: ResponseCode;
-  message: string;
-  data: T | null;
-  error: ApiError | null;
-  meta: ResponseMeta;
+  ok: boolean
+  code: ResponseCode
+  message: string
+  data: T | null
+  error: ApiError | null
+  meta: ResponseMeta
 }
 
 export type ResponseCode =
-  | "QUERY_SUCCESS"
-  | "NO_RELEVANT_CONTEXT"
-  | "MALFORMED_JSON"
-  | "INVALID_REQUEST_BODY"
-  | "EMBEDDING_FAILED"
-  | "RETRIEVAL_FAILED"
-  | "GENERATION_FAILED"
-  | "INTERNAL_ERROR";
+  | 'QUERY_SUCCESS'
+  | 'NO_RELEVANT_CONTEXT'
+  | 'MALFORMED_JSON'
+  | 'INVALID_REQUEST_BODY'
+  | 'EMBEDDING_FAILED'
+  | 'RETRIEVAL_FAILED'
+  | 'GENERATION_FAILED'
+  | 'INTERNAL_ERROR'
 
 export interface ApiError {
-  type: ErrorType;
-  details: string;
-  field?: string;
-  retryable: boolean;
+  type: ErrorType
+  details: string
+  field?: string
+  retryable: boolean
 }
 
-export type ErrorType =
-  | "client_error"
-  | "validation_error"
-  | "upstream_error"
-  | "server_error";
+export type ErrorType = 'client_error' | 'validation_error' | 'upstream_error' | 'server_error'
 
 export interface ResponseMeta {
-  requestId: string;
-  timestamp: string;
-  datasetVersion?: string;
-  question?: string;
-  retrievedCount?: number;
-  model?: string;
+  requestId: string
+  timestamp: string
+  datasetVersion?: string
+  question?: string
+  retrievedCount?: number
+  model?: string
 }

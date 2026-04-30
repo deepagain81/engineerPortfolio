@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 import { Footer } from '@/components'
 import { SECTION_IDS, site } from '@/data'
+import { ChatWidget } from '@/features/chat'
 import { Contact, Experience, Hero, Nav, Skills, Work } from '@/sections'
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <ChatWidget />
     </div>
   )
 }

@@ -44,6 +44,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes chat-ripple {
+  0% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
 @layer components {
   .t-hero {
     @apply font-display text-4xl sm:text-5xl font-semibold tracking-tight text-fg;
@@ -71,6 +82,44 @@ body {
   }
   .t-input {
     @apply mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-fg outline-none focus:ring-2 focus:ring-accent;
+  }
+  .t-chat-launcher {
+    @apply inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-contrast shadow-soft transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+  }
+  .t-chat-panel {
+    @apply flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-soft;
+  }
+  .t-chat-icon-btn {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-lg text-fg transition hover:bg-fg/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent;
+  }
+  .t-chat-message {
+    @apply max-w-[85%] rounded-2xl px-3 py-2 text-sm;
+  }
+  .t-chat-message-user {
+    @apply ml-auto bg-accent text-accent-contrast;
+  }
+  .t-chat-message-assistant {
+    @apply mr-auto border border-border bg-bg text-fg;
+  }
+  .t-chat-send {
+    @apply inline-flex h-[42px] w-[42px] items-center justify-center rounded-xl bg-accent text-accent-contrast transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .t-chat-ripple-layer {
+    @apply pointer-events-none absolute inset-0 flex items-center justify-center;
+  }
+  .t-chat-ripple-glow {
+    @apply absolute h-16 w-16 rounded-full bg-accent/20 blur-[2px];
+  }
+  .t-chat-ripple-ring {
+    @apply absolute h-14 w-14 rounded-full border-2 border-accent/70;
+    animation: chat-ripple 1.6s ease-out infinite;
+  }
+  .t-chat-ripple-ring-delay {
+    @apply border-accent/55;
+    animation-delay: 0.8s;
+  }
+  .t-chat-ripple-static {
+    @apply absolute h-14 w-14 rounded-full border-2 border-accent/45;
   }
 }
 

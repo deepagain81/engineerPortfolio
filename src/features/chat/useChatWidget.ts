@@ -3,8 +3,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { requestChatReply, toChatErrorMessage } from './chatApi'
 import type { ChatMessage } from './types'
 
-const INITIAL_ASSISTANT_MESSAGE =
-  "Hi, I’m Deepak. Ask me about my projects, skills, or experience."
+const INITIAL_ASSISTANT_MESSAGE = 'Hi, I’m Deepak. Ask me about my projects, skills, or experience.'
 
 function createMessage(role: ChatMessage['role'], text: string): ChatMessage {
   return {
@@ -23,10 +22,7 @@ export function useChatWidget() {
     createMessage('assistant', INITIAL_ASSISTANT_MESSAGE),
   ])
 
-  const canSend = useMemo(
-    () => draft.trim().length > 0 && !isSending,
-    [draft, isSending]
-  )
+  const canSend = useMemo(() => draft.trim().length > 0 && !isSending, [draft, isSending])
 
   const open = useCallback(() => setIsOpen(true), [])
   const close = useCallback(() => setIsOpen(false), [])

@@ -26,17 +26,8 @@ export function ChatWidget() {
   const [keyboardInset, setKeyboardInset] = useState(0)
   const [viewportHeight, setViewportHeight] = useState<number | null>(null)
 
-  const {
-    canSend,
-    close,
-    draft,
-    isOpen,
-    isSending,
-    messages,
-    open,
-    setDraft,
-    submitDraft,
-  } = useChatWidget()
+  const { canSend, close, draft, isOpen, isSending, messages, open, setDraft, submitDraft } =
+    useChatWidget()
 
   useEffect(() => {
     if (!isOpen) {
@@ -92,10 +83,7 @@ export function ChatWidget() {
     }
 
     const syncViewport = () => {
-      const nextInset = Math.max(
-        0,
-        window.innerHeight - (viewport.height + viewport.offsetTop)
-      )
+      const nextInset = Math.max(0, window.innerHeight - (viewport.height + viewport.offsetTop))
 
       setKeyboardInset(nextInset)
       setViewportHeight(viewport.height)
@@ -120,8 +108,7 @@ export function ChatWidget() {
 
   const handleScroll: React.UIEventHandler<HTMLDivElement> = (event) => {
     const target = event.currentTarget
-    const distanceFromBottom =
-      target.scrollHeight - target.scrollTop - target.clientHeight
+    const distanceFromBottom = target.scrollHeight - target.scrollTop - target.clientHeight
     setIsNearBottom(distanceFromBottom < 48)
   }
 
@@ -252,7 +239,9 @@ export function ChatWidget() {
                       className={`t-chat-message ${
                         isUser ? 't-chat-message-user' : 't-chat-message-assistant'
                       }`}
-                      initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.99 }}
+                      initial={
+                        shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.99 }
+                      }
                       animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: messageDuration, ease: 'easeOut' }}
                     >

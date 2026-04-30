@@ -2,6 +2,8 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { MessageCircle, SendHorizontal, X } from 'lucide-react'
 import { useEffect, useId, useRef, useState } from 'react'
 
+import { site } from '@/data'
+
 import { useChatWidget } from './useChatWidget'
 
 function formatTime(timestamp: string): string {
@@ -12,7 +14,7 @@ function formatTime(timestamp: string): string {
 }
 
 export function ChatWidget() {
-  const chatName = 'Deepak'
+  const chatName = site.name.trim().split(/\s+/)[0] || site.name
   const shouldReduceMotion = useReducedMotion()
 
   const headingId = useId()
@@ -135,41 +137,57 @@ export function ChatWidget() {
     >
       <AnimatePresence initial={false} mode="wait">
         {!isOpen ? (
-          <motion.button
-            key="chat-launcher"
-            ref={launcherRef}
-            type="button"
-            onClick={open}
-            className="t-chat-launcher pointer-events-auto"
-            aria-controls={panelId}
-            aria-expanded={false}
-            aria-label={`Open chat with ${chatName}`}
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.92, y: 8 }}
+          <motion.div
+            key="chat-launcher-wrap"
+            className="relative flex items-center justify-end"
+            initial={false}
             animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
             exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.92, y: 6 }}
             transition={{ duration: enterDuration, ease: 'easeOut' }}
           >
-            <motion.span
-              animate={
-                shouldReduceMotion
-                  ? undefined
-                  : {
-                      y: [0, -1.5, 0],
-                    }
-              }
-              transition={
-                shouldReduceMotion
-                  ? undefined
-                  : {
-                      duration: 2.2,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: 'easeInOut',
-                    }
-              }
+            <div className="t-chat-ripple-layer" aria-hidden="true">
+              <span className="t-chat-ripple-glow" />
+              {shouldReduceMotion ? (
+                <span className="t-chat-ripple-static" />
+              ) : (
+                <>
+                  <span className="t-chat-ripple-ring" />
+                  <span className="t-chat-ripple-ring t-chat-ripple-ring-delay" />
+                </>
+              )}
+            </div>
+
+            <motion.button
+              ref={launcherRef}
+              type="button"
+              onClick={open}
+              className="t-chat-launcher pointer-events-auto relative z-10"
+              aria-controls={panelId}
+              aria-expanded={false}
+              aria-label={`Open chat with ${chatName}`}
             >
-              <MessageCircle className="h-6 w-6" aria-hidden="true" />
-            </motion.span>
-          </motion.button>
+              <motion.span
+                animate={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        y: [0, -1.5, 0],
+                      }
+                }
+                transition={
+                  shouldReduceMotion
+                    ? undefined
+                    : {
+                        duration: 2.2,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: 'easeInOut',
+                      }
+                }
+              >
+                <MessageCircle className="h-6 w-6" aria-hidden="true" />
+              </motion.span>
+            </motion.button>
+          </motion.div>
         ) : (
           <motion.section
             key="chat-panel"

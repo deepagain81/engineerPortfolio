@@ -30,7 +30,6 @@ export function useChatWidget() {
 
   const open = useCallback(() => setIsOpen(true), [])
   const close = useCallback(() => setIsOpen(false), [])
-  const toggle = useCallback(() => setIsOpen((current) => !current), [])
 
   const submitDraft = useCallback(async () => {
     const nextQuestion = draft.trim()
@@ -64,6 +63,5 @@ export function useChatWidget() {
     open,
     setDraft,
     submitDraft,
-    toggle,
   }
 }

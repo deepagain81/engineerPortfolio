@@ -44,6 +44,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes chat-ripple {
+  0% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
 @layer components {
   .t-hero {
     @apply font-display text-4xl sm:text-5xl font-semibold tracking-tight text-fg;
@@ -92,6 +103,23 @@ body {
   }
   .t-chat-send {
     @apply inline-flex h-[42px] w-[42px] items-center justify-center rounded-xl bg-accent text-accent-contrast transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .t-chat-ripple-layer {
+    @apply pointer-events-none absolute inset-0 flex items-center justify-center;
+  }
+  .t-chat-ripple-glow {
+    @apply absolute h-16 w-16 rounded-full bg-accent/20 blur-[2px];
+  }
+  .t-chat-ripple-ring {
+    @apply absolute h-14 w-14 rounded-full border-2 border-accent/70;
+    animation: chat-ripple 1.6s ease-out infinite;
+  }
+  .t-chat-ripple-ring-delay {
+    @apply border-accent/55;
+    animation-delay: 0.8s;
+  }
+  .t-chat-ripple-static {
+    @apply absolute h-14 w-14 rounded-full border-2 border-accent/45;
   }
 }
 

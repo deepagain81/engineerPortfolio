@@ -25,7 +25,7 @@ export async function requestChatReply(question: string): Promise<string> {
   const answer = response.data?.answer?.trim()
 
   if (!answer) {
-    throw new Error('The assistant returned an empty answer.')
+    throw new Error("I couldn't generate a response just now.")
   }
 
   return answer
@@ -34,11 +34,11 @@ export async function requestChatReply(question: string): Promise<string> {
 export function toChatErrorMessage(error: unknown): string {
   if (isHttpError(error)) {
     if (error.code === 'TIMEOUT') {
-      return 'Request timed out. Please try again.'
+      return 'I took too long to respond. Please try again.'
     }
 
     if (error.code === 'NETWORK_ERROR') {
-      return 'Network issue detected. Please check your connection and retry.'
+      return "I'm having trouble reaching the network. Please check your connection and retry."
     }
 
     return error.message
@@ -48,5 +48,5 @@ export function toChatErrorMessage(error: unknown): string {
     return error.message
   }
 
-  return 'Unable to get a response right now. Please try again.'
+  return "I'm unable to respond right now. Please try again."
 }

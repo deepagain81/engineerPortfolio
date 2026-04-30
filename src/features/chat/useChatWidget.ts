@@ -4,7 +4,7 @@ import { requestChatReply, toChatErrorMessage } from './chatApi'
 import type { ChatMessage } from './types'
 
 const INITIAL_ASSISTANT_MESSAGE =
-  "Hi, I’m Deepak’s portfolio assistant. Ask me about projects, skills, or experience."
+  "Hi, I’m Deepak. Ask me about my projects, skills, or experience."
 
 function createMessage(role: ChatMessage['role'], text: string): ChatMessage {
   return {

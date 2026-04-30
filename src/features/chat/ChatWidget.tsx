@@ -11,6 +11,7 @@ function formatTime(timestamp: string): string {
 }
 
 export function ChatWidget() {
+  const chatName = 'Deepak'
   const headingId = useId()
   const panelId = useId()
   const launcherRef = useRef<HTMLButtonElement>(null)
@@ -134,7 +135,7 @@ export function ChatWidget() {
           className="t-chat-launcher pointer-events-auto"
           aria-controls={panelId}
           aria-expanded={false}
-          aria-label="Open chat assistant"
+          aria-label={`Open chat with ${chatName}`}
         >
           <MessageCircle className="h-6 w-6" aria-hidden="true" />
         </button>
@@ -154,9 +155,9 @@ export function ChatWidget() {
           <header className="flex items-center justify-between border-b border-border px-4 py-3">
             <div>
               <h2 id={headingId} className="text-sm font-semibold text-fg">
-                Chat Assistant
+                Chat with {chatName}
               </h2>
-              <p className="t-muted text-xs">Ask about experience and projects</p>
+              <p className="t-muted text-xs">Ask me about experience and projects</p>
             </div>
 
             <button
@@ -168,7 +169,7 @@ export function ChatWidget() {
                 })
               }}
               className="t-chat-icon-btn"
-              aria-label="Close chat assistant"
+              aria-label={`Close chat with ${chatName}`}
             >
               <X className="h-5 w-5" aria-hidden="true" />
             </button>
@@ -206,7 +207,7 @@ export function ChatWidget() {
 
             {isSending ? (
               <article className="t-chat-message t-chat-message-assistant text-muted">
-                Thinking...
+                ...
               </article>
             ) : null}
           </div>
@@ -228,7 +229,7 @@ export function ChatWidget() {
                     void submitDraft()
                   }
                 }}
-                placeholder="Ask a question..."
+                placeholder={`Ask me a question...`}
                 className="t-input mt-0 max-h-28 min-h-[42px] resize-none"
               />
 

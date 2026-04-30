@@ -1,50 +1,140 @@
-# React + TypeScript + Vite
+# Deepak Chapagain - Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **mobile-first, production-grade** portfolio site built with **React + TypeScript + Vite**.  
+Selected work is framed as **mini case studies**: _problem → approach → measurable impact_.
 
-Currently, two official plugins are available:
+**Live:** [deepakchapagain.com](URL)  
+**Resume:** [/resume.pdf](URL)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Preview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Preview — mobile](./docs/preview-mobile.png)
+![Preview — desktop](./docs/preview-desktop.png)
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## What you will find
+
+- Clean, responsive UI (mobile-first)
+- Dark/Light theme + subtle motion polish
+- Case-study project cards (problem/approach/impact)
+- A11y-minded development (eslint jsx-a11y + optional runtime checks)
+- PR quality gates (format + lint + typecheck)
+
+---
+
+## Tech stack
+
+- **React 18 + TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **Animations:** Framer Motion
+- **Icons:** lucide-react + react-icons
+- **Code quality:** ESLint + Prettier + TypeScript project references (`tsc -b`)
+- **A11y tooling:** eslint-plugin-jsx-a11y + @axe-core/react
+- **Git hooks:** Husky + lint-staged
+
+---
+
+## Quality gate (What I enforce)
+
+This repo is set up with quality checks designed to match how teams ship production UI:
+
+- **Lint:** `eslint .`
+- **Formatting:** `prettier . --check`
+- **Type safety:** `tsc -b --noEmit`
+- **One-command quality gate:** `npm run quality` → lint + format check + typecheck
+
+> Recommended GitHub settings:
+>
+> - **Squash merge only**
+> - **Require status checks to pass before merge**
+> - Require PR (and at least 1 approval if you collaborate)
+
+Common commands:
+
+```bash
+npm run quality        # lint + format:check + typecheck
+npm run quality:fix    # prettier --write + eslint --fix + typecheck
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Requirements
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+- **Node:** `>=20 <25` (see `package.json`)
+- Package manager: **npm**
+
+---
+
+## Getting started
+
+```bash
+npm ci
+npm run dev
 ```
+
+Open the local URL Vite prints (typically `http://localhost:5173`).
+
+Build & preview:
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## Structure & customization
+
+Project structure:
+
+```txt
+src/
+  components/        # reusable UI components
+  data/              # site content and constants
+  sections/          # page sections (hero, projects, experience, contact)
+public/
+  resume.pdf         # static resume file
+.github/workflows/   # CI: format/lint/typecheck on PRs
+index.css            # global styles / tokens
+```
+
+Quick edits:
+
+- Update **site metadata** (title/description/OG): `index.html`
+- Update **content** (hero, projects, experience): `src/data/`
+- Update **social links**: `src/data`
+- Replace **resume**: `public/resume.pdf`
+
+---
+
+## About
+
+I am **Deepak Chapagain**, a computer engineer with **~6+ years** of industry experience building **React / React Native** products with pragmatic architecture, measurable outcomes, and quality guardrails.
+
+Currently: **Technology Analyst at Tractor Supply Company (TSC)** (Brentwood, TN).  
+Previously: **Southern California Edison**.
+
+---
+
+## Contact
+
+Want to discuss a role, a contract, or a collaboration? **Email is best.**
+
+- Email: dchapagain.dev@gmail.com
+- LinkedIn: [https://www.linkedin.com/in/dchapagain/](URL)
+- GitHub: [https://github.com/deepagain81](URL)
+
+---
+
+## License
+
+- **Code:** MIT (see `LICENSE`)
+- **Personal content (resume, bio/project writeups, images/logo):** All rights reserved (see `CONTENT_LICENSE.md`)
+
+If you publish a fork/derivative, please **remove/replace all personal content** first.
+
+---

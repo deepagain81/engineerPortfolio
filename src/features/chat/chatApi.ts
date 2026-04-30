@@ -4,11 +4,12 @@ import type { ChatQueryRequest, ChatQueryResponseData } from './types'
 
 const DEFAULT_CHAT_API_URL = '/api/query'
 
-const CHAT_API_URL = import.meta.env.VITE_CHAT_API_URL ?? DEFAULT_CHAT_API_URL
+const DOMAIN_URL = import.meta.env.DOMAIN_URL?.replace(/\/+$/, '') ?? ''
+const CHAT_ENDPOINT = `${DOMAIN_URL}${DEFAULT_CHAT_API_URL}`
 
 export async function requestChatReply(question: string): Promise<string> {
   const response = await httpRequest<ChatQueryResponseData, ChatQueryRequest>({
-    url: CHAT_API_URL,
+    url: CHAT_ENDPOINT,
     method: 'POST',
     body: { question },
     timeoutMs: 20_000,

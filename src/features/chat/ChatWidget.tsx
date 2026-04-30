@@ -17,6 +17,8 @@ export function ChatWidget() {
   const textAreaRef = useRef<HTMLTextAreaElement>(null)
   const logRef = useRef<HTMLDivElement>(null)
   const [isNearBottom, setIsNearBottom] = useState(true)
+  const [keyboardInset, setKeyboardInset] = useState(0)
+  const [viewportHeight, setViewportHeight] = useState<number | null>(null)
 
   const {
     canSend,
@@ -28,7 +30,6 @@ export function ChatWidget() {
     open,
     setDraft,
     submitDraft,
-    toggle,
   } = useChatWidget()
 
   useEffect(() => {
@@ -61,7 +62,9 @@ export function ChatWidget() {
       }
 
       close()
-      launcherRef.current?.focus()
+      window.requestAnimationFrame(() => {
+        launcherRef.current?.focus()
+      })
     }
 
     window.addEventListener('keydown', onKeyDown)
@@ -70,6 +73,39 @@ export function ChatWidget() {
       window.removeEventListener('keydown', onKeyDown)
     }
   }, [close, isOpen])
+
+  useEffect(() => {
+    if (!isOpen || typeof window === 'undefined') {
+      return
+    }
+
+    const viewport = window.visualViewport
+
+    if (!viewport) {
+      return
+    }
+
+    const syncViewport = () => {
+      const nextInset = Math.max(
+        0,
+        window.innerHeight - (viewport.height + viewport.offsetTop)
+      )
+
+      setKeyboardInset(nextInset)
+      setViewportHeight(viewport.height)
+    }
+
+    syncViewport()
+    viewport.addEventListener('resize', syncViewport)
+    viewport.addEventListener('scroll', syncViewport)
+
+    return () => {
+      viewport.removeEventListener('resize', syncViewport)
+      viewport.removeEventListener('scroll', syncViewport)
+      setKeyboardInset(0)
+      setViewportHeight(null)
+    }
+  }, [isOpen])
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault()
@@ -87,7 +123,7 @@ export function ChatWidget() {
     <div
       className="pointer-events-none fixed right-4 z-50"
       style={{
-        bottom: 'calc(1rem + env(safe-area-inset-bottom, 0px))',
+        bottom: `calc(1rem + env(safe-area-inset-bottom, 0px) + ${keyboardInset}px)`,
       }}
     >
       {!isOpen ? (
@@ -109,6 +145,11 @@ export function ChatWidget() {
           aria-modal="false"
           aria-labelledby={headingId}
           className="t-chat-panel pointer-events-auto h-[min(70vh,34rem)] w-[min(calc(100vw-2rem),24rem)]"
+          style={
+            viewportHeight
+              ? { height: `${Math.min(544, Math.max(320, viewportHeight - 112))}px` }
+              : undefined
+          }
         >
           <header className="flex items-center justify-between border-b border-border px-4 py-3">
             <div>
@@ -119,9 +160,13 @@ export function ChatWidget() {
             </div>
 
             <button
-              ref={launcherRef}
               type="button"
-              onClick={toggle}
+              onClick={() => {
+                close()
+                window.requestAnimationFrame(() => {
+                  launcherRef.current?.focus()
+                })
+              }}
               className="t-chat-icon-btn"
               aria-label="Close chat assistant"
             >

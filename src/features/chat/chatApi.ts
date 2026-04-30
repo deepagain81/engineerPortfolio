@@ -1,5 +1,4 @@
-import { isHttpError } from '@/services/http'
-import { httpRequest } from '@/services/http/httpClient'
+import { httpRequest, isHttpError } from '@/services/http'
 
 import type { ChatQueryRequest, ChatQueryResponseData } from './types'
 

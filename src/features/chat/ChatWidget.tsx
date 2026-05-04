@@ -25,6 +25,7 @@ export function ChatWidget() {
   const [isNearBottom, setIsNearBottom] = useState(true)
   const [keyboardInset, setKeyboardInset] = useState(0)
   const [viewportHeight, setViewportHeight] = useState<number | null>(null)
+  const MAX_INPUT_CHARACTERS = 480
 
   const { canSend, close, draft, isOpen, isSending, messages, open, setDraft, submitDraft } =
     useChatWidget()
@@ -114,6 +115,7 @@ export function ChatWidget() {
 
   const enterDuration = shouldReduceMotion ? 0.08 : 0.2
   const messageDuration = shouldReduceMotion ? 0.06 : 0.18
+  const inputCharCount = draft.length
 
   return (
     <div
@@ -315,6 +317,7 @@ export function ChatWidget() {
                   id={`${panelId}-input`}
                   ref={textAreaRef}
                   rows={1}
+                  maxLength={MAX_INPUT_CHARACTERS}
                   value={draft}
                   onChange={(event) => setDraft(event.target.value)}
                   onKeyDown={(event) => {
@@ -336,7 +339,10 @@ export function ChatWidget() {
                   <SendHorizontal className="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>
-              <p className="t-muted mt-1 text-xs">Enter to send, Shift+Enter for new line</p>
+              <div className='flex items-center justify-between'>
+                <p className="t-muted mt-1 text-xs">Enter to send, Shift+Enter for new line</p>
+                <p className="t-muted mt-1 text-xs">{inputCharCount}/{MAX_INPUT_CHARACTERS}</p>
+              </div>
             </form>
           </motion.section>
         )}

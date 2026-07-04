@@ -104,10 +104,17 @@ index.css            # global styles / tokens
 
 Quick edits:
 
-- Update **site metadata** (title/description/OG): `index.html`
+- Update **site title/description** (also used for OG/Twitter tags): `src/data/site.ts` — a Vite plugin (`vite.config.ts`) injects these into `index.html` at build time, so there's one source of truth
+- Update **OG/Twitter image and canonical URL**: `index.html` (static, since they're asset references, not copy)
 - Update **content** (hero, projects, experience): `src/data/`
 - Update **social links**: `src/data`
 - Replace **resume**: `public/resume.pdf`
+
+---
+
+## Chat widget
+
+`MAX_INPUT_CHARACTERS` (480) in `src/features/chat/chatApi.ts` is intentional — it aligns with the backend's KV/R2 caching constraints, not an arbitrary UI choice.
 
 ---
 

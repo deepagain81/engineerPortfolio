@@ -339,9 +339,11 @@ export function ChatWidget() {
                   <SendHorizontal className="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>
-              <div className='flex items-center justify-between'>
+              <div className="flex items-center justify-between">
                 <p className="t-muted mt-1 text-xs">Enter to send, Shift+Enter for new line</p>
-                <p className="t-muted mt-1 text-xs">{inputCharCount}/{MAX_INPUT_CHARACTERS}</p>
+                <p className="t-muted mt-1 text-xs">
+                  {inputCharCount}/{MAX_INPUT_CHARACTERS}
+                </p>
               </div>
             </form>
           </motion.section>

@@ -248,7 +248,7 @@ export function ChatWidget() {
                       animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: messageDuration, ease: 'easeOut' }}
                     >
-                      <ChatMessageText text={message.text} />
+                      <ChatMessageText text={message.text} onSamePageNavigation={close} />
                       <p
                         className={`mt-1 text-[11px] ${
                           isUser ? 'text-accent-contrast/85' : 'text-muted'

@@ -12,11 +12,31 @@ function isSameOrigin(href: string): boolean {
   }
 }
 
+function isSamePageHashNavigation(href: string): boolean {
+  try {
+    const url = new URL(href, window.location.href)
+    return (
+      url.origin === window.location.origin &&
+      url.pathname === window.location.pathname &&
+      url.hash !== ''
+    )
+  } catch {
+    return false
+  }
+}
+
+type Props = {
+  text: string
+  // Called when a link that scrolls within the current page is clicked,
+  // so the chat panel can close instead of covering the target section.
+  onSamePageNavigation?: () => void
+}
+
 // Renders chat message text, converting markdown-style [label](url) links to
 // anchors. Intentionally link-only: the chat backend replies with plain text
 // plus links. If that contract grows (bold, lists, code), replace this
 // component's internals with a markdown renderer - callers won't change.
-export function ChatMessageText({ text }: { text: string }) {
+export function ChatMessageText({ text, onSamePageNavigation }: Props) {
   const nodes: ReactNode[] = []
   let lastIndex = 0
 
@@ -33,6 +53,7 @@ export function ChatMessageText({ text }: { text: string }) {
         key={`${href}-${index}`}
         href={href}
         className="underline underline-offset-2"
+        onClick={isSamePageHashNavigation(href) ? onSamePageNavigation : undefined}
         {...(isSameOrigin(href) ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
       >
         {label}

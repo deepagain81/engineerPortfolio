@@ -93,7 +93,7 @@ body {
     @apply inline-flex h-9 w-9 items-center justify-center rounded-lg text-fg transition hover:bg-fg/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent;
   }
   .t-chat-message {
-    @apply max-w-[85%] rounded-2xl px-3 py-2 text-sm;
+    @apply max-w-[85%] break-words rounded-2xl px-3 py-2 text-sm;
   }
   .t-chat-message-user {
     @apply ml-auto bg-accent text-accent-contrast;

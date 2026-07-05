@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 
 import { site } from '@/data'
 
+import { ChatMessageText } from './ChatMessageText'
 import { useChatWidget } from './useChatWidget'
 
 function formatTime(timestamp: string): string {
@@ -247,7 +248,7 @@ export function ChatWidget() {
                       animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: messageDuration, ease: 'easeOut' }}
                     >
-                      <p className="whitespace-pre-wrap leading-6">{message.text}</p>
+                      <ChatMessageText text={message.text} />
                       <p
                         className={`mt-1 text-[11px] ${
                           isUser ? 'text-accent-contrast/85' : 'text-muted'

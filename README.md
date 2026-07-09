@@ -64,7 +64,7 @@ npm run quality:fix    # prettier --write + eslint --fix + typecheck
 
 ## Requirements
 
-- **Node:** `>=20 <25` (see `package.json`)
+- **Node:** `24.6.0` (pinned in `.nvmrc`; run `nvm use`)
 - Package manager: **npm**
 
 ---

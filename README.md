@@ -116,6 +116,8 @@ Quick edits:
 
 `MAX_INPUT_CHARACTERS` (480) in `src/features/chat/chatApi.ts` is intentional — it aligns with the backend's KV/R2 caching constraints, not an arbitrary UI choice.
 
+Chat replies link via **semantic tokens**, not raw URLs — sections as `#work` / `#skills` / `#experience` / `#contact`, external destinations as `site:github` / `site:linkedin` / `site:email` / `site:resume` — resolved client-side from `src/data/` (`SECTION_IDS`, `site.social`). Unknown tokens render as plain text, so the backend model can never author an arbitrary link.
+
 ---
 
 ## About

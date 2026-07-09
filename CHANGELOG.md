@@ -20,7 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Pinned Node to `24.6.0` across `.nvmrc`, `package.json` engines, and CI (via `node-version-file`)
 
-
 ---
 
 ## [0.3.0] - 2026-07-08
